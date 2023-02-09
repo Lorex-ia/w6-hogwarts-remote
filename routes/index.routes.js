@@ -6,4 +6,13 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
+
+/* GET & render hat quizz */
+router.get("/hatquizz", (req, res, next) => {
+  res.render("hatquizz");
+});
+
+
+
+
 module.exports = router;

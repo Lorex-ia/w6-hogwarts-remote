@@ -16,20 +16,40 @@ require('./config')(app)
 
 // default value for title local
 const capitalize = require('./utils/capitalize')
-const projectName = 'w6-hogwarts-remote'
+const projectName = 'Welcome to Hogwarts remote!'
 
 //some change signed by Diana
 
-app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`
+app.locals.appTitle = `${capitalize(projectName)}`
 
 // 👇 Start handling routes here
 const indexRoutes = require('./routes/index.routes')
 app.use('/', indexRoutes)
 
+
+//Hat quizz route
+const hatQuizzRoutes = require('./routes/index.routes')
+app.use('/hatquizz', hatQuizzRoutes)
+
+
+
+
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app)
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = app
 
 
-// My name is Alexia 
