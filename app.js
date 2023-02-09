@@ -18,6 +18,8 @@ require('./config')(app)
 const capitalize = require('./utils/capitalize')
 const projectName = 'w6-hogwarts-remote'
 
+//some change signed by Diana
+
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`
 
 // 👇 Start handling routes here
@@ -28,3 +30,4 @@ app.use('/', indexRoutes)
 require('./error-handling')(app)
 
 module.exports = app
+
