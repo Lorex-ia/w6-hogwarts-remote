@@ -15,4 +15,13 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
   res.render("profile", { user: req.session.user });
 });
 
+
+/* GET & render hat quizz */
+router.get("/hatquizz", (req, res, next) => {
+  res.render("hatquizz");
+});
+
+
+
+
 module.exports = router;
