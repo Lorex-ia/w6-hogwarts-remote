@@ -1,0 +1,39 @@
+<h2>Sign up page</h2>
+
+<!-- START OF LETTER -->
+<div>
+    <p>
+        We are glad to announce that Hogwarts is expanding its courses to online lectures. If you have come to this page it means that you have an invitation and that you are indeead.... A WIZARD!!!
+        The whole community is thrilled to have you signed up for the Remote course. 
+        You just have to chose an username and a password, and be sorted for the house. So firstly, complete the form below. 
+        Then afterwards go to experience the Sorting Hat Quiz!
+    </p>
+</div>
+
+
+<!-- END OF LETTER-->
+
+
+
+<!-- START OF TYPING FORM -->
+<form method="POST" action="/auth/signup">
+
+    <label> Username: 
+        <input type="text" name="username" required >
+    </label>
+
+    <label> Password:
+        <input type="password" name="password" required >
+    </label>
+
+    <button type="submit">Proceed to the Sorting Hat Quiz!</button>
+
+</form>
+<!-- END OF TYPING FORM -->
+
+
+<!-- ERROR  -->
+<% if (typeof errorMessage != "undefined") { %>
+    <p> <%= errorMessage %> </p>
+<% } %>
+<!-- END OF ERROR-->
