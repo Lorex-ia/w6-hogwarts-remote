@@ -4,7 +4,7 @@ const User = require("../models/User.model");
 const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
 const router = require("express").Router();
 
-
+//signup page
 router.get("/signup", isLoggedOut, (req, res) => {
     res.render("auth/signup", { user: undefined });
 });
@@ -28,7 +28,7 @@ router.post('/signup', isLoggedOut, async (req, res) => {
         try {
             let newUser = await User.create(body);
             req.session.user = newUser;
-            res.redirect('/profile');
+            res.redirect('/hatquizz');
         }
         catch (error) {
             if (error.code === 11000) {
@@ -50,6 +50,8 @@ router.post('/signup', isLoggedOut, async (req, res) => {
 
 });
 
+
+//Login page
 router.get('/login', isLoggedOut, (req, res) => {
     res.render('auth/login', { user: undefined });
 })
@@ -101,11 +103,39 @@ router.get('/profile', isLoggedIn, (req, res) => {
     res.render('profile/profile-home', { user: req.session.user })
 })
 
+// logout page
 router.get('/logout', isLoggedIn, (req, res) => {
     req.session.destroy(err => {
         if (err) next(err)
         res.redirect('/')
     })
 })
+
+
+
+
+//Routes for the Quizz part
+
+router.get('/hatquizz', isLoggedIn, (req, res) => {
+    res.render('hatquizz', { user: req.session.user })
+})
+
+
+
+router.post('/hatquizz', isLoggedIn, async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.session.user._id, { house: req.body.maxHouse }, { new: true });
+        req.session.user = user;
+        res.redirect('/profile/profile-home');
+    } catch (error) {
+        console.error(error);
+        res.render('error', { error });
+    }
+});
+
+
+
+
+
 
 module.exports = router;

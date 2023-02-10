@@ -1,9 +1,7 @@
-<h1><%= appTitle %> </h1>
-
 <h2> Welcome to the Sorting Hat's quizz </h2>
 <p>To what House do you belong to? </p>
 
-<form>
+<form method="POST" action="/hatquizz">
     <p>You and two friends need to cross a bridge guarded by a river troll who insists on fighting one of you before he will let all of you pass. Do you:</p>
         <input type="radio" id="eagle" name="animal" value="ravenclaw">
             <label for="eagle">Attempt to confuse the troll into letting all three of you pass without fighting?</label>
@@ -57,4 +55,6 @@
 </form>
 
 <button onclick="submit_quizz()"> Discover my House </button>
+
+
 
