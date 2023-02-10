@@ -9,6 +9,14 @@
   </head>
 
   <body>
+
+    <% 
+        if (user) { %>
+        <li><a href="/my-profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <% } 
+    %>
+
     <%- body %>
 
     <script src="/js/script.js"></script>
