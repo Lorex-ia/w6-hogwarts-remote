@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title><%= appTitle %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+
+    <body>
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="views/profile/profile-index.ejs">Home</a>
+                    </li>
+                    <li>
+                        <a href="views/profile/profile-info.ejs">My profile</a>
+                    </li>
+                    <li>
+                        <a href="views/profile/lounge.ejs">House Lounge</a>
+                    </li>
+                    <li>
+                        <a href="views/profile/syllabus.ejs">Syllabys</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+
+        <%- body %>
+
+        <script src="/js/script.js"></script>
+    </body>
+    </html>

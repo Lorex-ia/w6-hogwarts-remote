@@ -1,0 +1,19 @@
+<h2>Prove you are a Hogwarts student. Login in using your username and password below.</h2>
+
+<form method="POST" action="/auth/login">
+
+    <label> Username: 
+        <input type="text" name="username" required >
+    </label>
+
+    <label> Password:
+        <input type="password" name="password" required >
+    </label>
+
+    <button type="submit">Log in to your profile</button>
+
+</form>
+
+<% if (typeof errorMessage != "undefined") { %>
+    <p> <%= errorMessage %> </p>
+<% } %>

@@ -2,3 +2,4 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("w6-hogwarts-remote JS imported successfully!");
 });
+
