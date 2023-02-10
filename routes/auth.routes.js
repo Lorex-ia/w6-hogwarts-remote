@@ -51,6 +51,17 @@ router.post('/signup', isLoggedOut, async (req, res) => {
 });
 
 
+
+router.get('/signup-profile', isLoggedIn, (req, res) => {
+    res.render('auth/signup-profile', { user: req.session.user });
+
+    console.log('SESSION =====> ', req.session);
+
+    
+})
+
+
+
 //Login page
 router.get('/login', isLoggedOut, (req, res) => {
     res.render('auth/login', { user: undefined });
@@ -69,12 +80,11 @@ router.post('/login', isLoggedOut, async (req, res) => {
         // user found
         const currentUser = userMatch[0];
 
-        if (bcrypt.compareSync(body.password, currentUser.passwordHash)) { // return a boolean
-            // correct password
+        if (bcrypt.compareSync(body.password, currentUser.passwordHash)) { 
             console.log("correct password");
             
-            req.session.user = currentUser; ////////////////// really important line
-            res.redirect('/profile/profile-home');
+            req.session.user = currentUser; 
+            res.redirect('/profile'); ////////
             
         } else {
             // incorrect password
@@ -96,12 +106,13 @@ router.post('/login', isLoggedOut, async (req, res) => {
 
 });
 
+router.get("/profile", (req, res, next) => {
+    res.render("profile/profile-home", { user: req.session.user, 
+    layout: "../views/profile/profile-layout.ejs" });
+});
 
-// Get to display the profile page
-router.get('/profile', isLoggedIn, (req, res) => {
-    console.log(req.session)
-    res.render('profile/profile-home', { user: req.session.user })
-})
+
+
 
 // logout page
 router.get('/logout', isLoggedIn, (req, res) => {
