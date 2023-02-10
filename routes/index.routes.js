@@ -4,21 +4,17 @@ const router = express.Router();
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  
-    res.render("index", { user: req.session.user || undefined  });
-  
+  res.render("index", { user: req.session.user || undefined  });
 });
 
 router.get("/my-profile", isLoggedIn,  (req, res, next) => {
   res.render("auth/signup-profile", { user: req.session.user });
 });
 
-
 /* GET & render hat quizz */
-router.get("/hatquizz", (req, res, next) => {
-  res.render("hatquizz");
+router.get("/hatquiz", (req, res, next) => {
+  res.render("hatquiz/hatquizz", { user: req.session.user });
 });
-
 
 router.get('/logout', isLoggedIn, (req, res) => {
   req.session.destroy(err => {
@@ -26,7 +22,5 @@ router.get('/logout', isLoggedIn, (req, res) => {
       res.redirect('/')
   })
 })
-
-
 
 module.exports = router;

@@ -6,11 +6,11 @@ const User = require("../models/User.model");
 
   //Routes for the Quizz part
   // the / would still be /hatquizz because it is defined in the boucer in app.js
-router.get('/', (req, res) => {
-    res.render('hatquizz', { user: req.session.user })
+router.get('/', isLoggedIn, (req, res) => {
+    res.render('hatquiz/hatquizz', { user: req.session.user })
 })
 
-router.post('/', async (req, res) => {
+router.post('/', isLoggedIn, async (req, res) => {
 // console.log("made it here", req.body)
         var gryffindor = {house : "gryffindor", count : 0}
         var slytherin = {house : "slytherin", count : 0};
@@ -29,15 +29,15 @@ router.post('/', async (req, res) => {
             else if (req.body[question] === "ravenclaw" ){
                 ravenclaw.count += 1
             }
-           else if (req.body[question] === "hufflepuff" ){
+            else if (req.body[question] === "hufflepuff" ){
                 hufflepuff.count += 1
             } 
         }
 //Console log the points
-      console.log(gryffindor, slytherin, hufflepuff, ravenclaw)
+    console.log(gryffindor, slytherin, hufflepuff, ravenclaw)
 
-      const hogwarts = [gryffindor, slytherin, hufflepuff, ravenclaw]
-      hogwarts.sort((a,b) =>{
+    const hogwarts = [gryffindor, slytherin, hufflepuff, ravenclaw]
+    hogwarts.sort((a,b) =>{
         if(a.count>b.count){
             return -1;
         }else if(b.count>a.count){
@@ -45,10 +45,10 @@ router.post('/', async (req, res) => {
         } else {
             return 0;
         }
-      })
+    })
 
-      const myHouse = hogwarts[0].house.toUpperCase()
-      console.log("pizza:", hogwarts)
+    const myHouse = hogwarts[0].house.toUpperCase()
+    console.log("pizza:", hogwarts)
 
 
       // Checking which one is bigger
@@ -79,19 +79,17 @@ router.post('/', async (req, res) => {
     //     }
 
 
-        console.log("this is your house:", myHouse, req.session)
+    console.log("this is your house:", myHouse, req.session)
 
 
     try {
         const user = await User.findByIdAndUpdate(req.session.user._id, { house: myHouse }, { new: true });
         req.session.user = user;
-        res.redirect('/profile/profile-home');
+        res.redirect('/profile');
     } catch (error) {
         console.error(error);
         res.render('error', { error });
     }
 });
 
-
-
-  module.exports = router;
+module.exports = router;

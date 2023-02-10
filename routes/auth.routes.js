@@ -28,7 +28,7 @@ router.post('/signup', isLoggedOut, async (req, res) => {
         try {
             let newUser = await User.create(body);
             req.session.user = newUser;
-            res.redirect('/hatquizz');
+            res.redirect('/hatquiz');
         }
         catch (error) {
             if (error.code === 11000) {
@@ -114,22 +114,24 @@ router.get("/profile", (req, res, next) => {
 
 
 
+
+
 // logout page
 router.get('/logout', isLoggedIn, (req, res) => {
     req.session.destroy(err => {
         if (err) next(err)
         res.redirect('/')
     })
-})
+});
 
 
 
 
 // //Routes for the Quizz part
+router.get('/hatquiz', isLoggedIn, (req, res) => {
+    res.render('hatquiz/hatquizz', { user: req.session.user })
+});
 
-// router.get('/hatquizz', isLoggedIn, (req, res) => {
-//     res.render('hatquizz', { user: req.session.user })
-// })
 
 
 

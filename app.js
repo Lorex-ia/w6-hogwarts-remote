@@ -33,34 +33,14 @@ app.use('/auth', authRoutes)
 const profileRoutes = require('./routes/profile.routes')
 app.use('/profile', profileRoutes)
 
-
-
-
 //Hat quizz bouncer
 const hatQuizzRoutes = require('./routes/quizz.routes')
-app.use('/hatquizz', hatQuizzRoutes)
-
-
-
-
+app.use('/hatquiz', hatQuizzRoutes)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app)
 
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = app
-
 
 // My name is Alexia 
 // My name is Diana
