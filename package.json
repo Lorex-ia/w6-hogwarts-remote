@@ -19,7 +19,8 @@
     "mongoose": "^6.9.1",
     "morgan": "^1.10.0",
     "serve-favicon": "^2.5.0",
-    "session": "^0.1.0"
+    "session": "^0.1.0",
+    "sessions": "^0.0.2-7"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

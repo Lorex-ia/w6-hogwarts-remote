@@ -35,8 +35,11 @@ const profileRoutes = require('./routes/profile.routes')
 const { isLoggedIn } = require('./middleware/route-guard')
 app.use('/profile', isLoggedIn, profileRoutes)
 
-//Hat quizz route
-const hatQuizzRoutes = require('./routes/index.routes')
+
+
+
+//Hat quizz bouncer
+const hatQuizzRoutes = require('./routes/quizz.routes')
 app.use('/hatquizz', hatQuizzRoutes)
 
 

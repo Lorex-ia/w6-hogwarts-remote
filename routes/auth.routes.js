@@ -114,24 +114,24 @@ router.get('/logout', isLoggedIn, (req, res) => {
 
 
 
-//Routes for the Quizz part
+// //Routes for the Quizz part
 
-router.get('/hatquizz', isLoggedIn, (req, res) => {
-    res.render('hatquizz', { user: req.session.user })
-})
+// router.get('/hatquizz', isLoggedIn, (req, res) => {
+//     res.render('hatquizz', { user: req.session.user })
+// })
 
 
 
-router.post('/hatquizz', isLoggedIn, async (req, res) => {
-    try {
-        const user = await User.findByIdAndUpdate(req.session.user._id, { house: req.body.maxHouse }, { new: true });
-        req.session.user = user;
-        res.redirect('/profile/profile-home');
-    } catch (error) {
-        console.error(error);
-        res.render('error', { error });
-    }
-});
+// router.post('/hatquizz', isLoggedIn, async (req, res) => {
+//     try {
+//         const user = await User.findByIdAndUpdate(req.session.user._id, { house: req.body.maxHouse }, { new: true });
+//         req.session.user = user;
+//         res.redirect('/profile/profile-home');
+//     } catch (error) {
+//         console.error(error);
+//         res.render('error', { error });
+//     }
+// });
 
 
 
