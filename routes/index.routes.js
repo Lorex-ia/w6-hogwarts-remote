@@ -9,10 +9,18 @@ router.get("/", (req, res, next) => {
   
 });
 
+// This is the page that should be rendered after doing the quizz
 router.get("/my-profile", isLoggedIn,  (req, res, next) => {
   res.render("auth/signup-profile", { user: req.session.user });
 });
 
+router.get("/profile", isLoggedIn, (req, res, next) => {
+  console.log('SESSION =====> ', req.session);
+      if (!req.session.user) {
+          res.redirect("/auth/login");
+        }
+  res.render("profile", { user: req.session.user });
+});
 
 /* GET & render hat quizz */
 router.get("/hatquizz", (req, res, next) => {

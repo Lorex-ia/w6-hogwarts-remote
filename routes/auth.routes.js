@@ -4,6 +4,7 @@ const User = require("../models/User.model");
 const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
 const router = require("express").Router();
 
+
 //signup page
 router.get("/signup", isLoggedOut, (req, res) => {
     res.render("auth/signup", { user: undefined });
@@ -106,6 +107,8 @@ router.post('/login', isLoggedOut, async (req, res) => {
 
 });
 
+
+// Get to display the profile page
 router.get("/profile", (req, res, next) => {
     res.render("profile/profile-home", { user: req.session.user, 
     layout: "../views/profile/profile-layout.ejs" });
@@ -126,14 +129,15 @@ router.get('/logout', isLoggedIn, (req, res) => {
 
 
 // //Routes for the Quizz part
+  
 
-// router.get('/hatquizz', isLoggedIn, (req, res) => {
+// router.get('/hatquizz', (req, res) => {
 //     res.render('hatquizz', { user: req.session.user })
 // })
 
 
 
-// router.post('/hatquizz', isLoggedIn, async (req, res) => {
+// router.post('/hatquizz', async (req, res) => {
 //     try {
 //         const user = await User.findByIdAndUpdate(req.session.user._id, { house: req.body.maxHouse }, { new: true });
 //         req.session.user = user;
