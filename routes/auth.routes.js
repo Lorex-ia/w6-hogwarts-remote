@@ -131,9 +131,9 @@ router.get('/logout', isLoggedIn, (req, res) => {
 
 //Dianes' code
 
-// router.get('/hatquiz', isLoggedIn, (req, res) => {
-//     res.render('hatquiz/hatquizz', { user: req.session.user })
-// });
+router.get('/hatquiz', isLoggedIn, (req, res) => {
+    res.render('hatquiz/hatquizz', { user: req.session.user })
+});
 
 
 // router.post('/hatquizz', async (req, res) => {
