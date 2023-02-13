@@ -14,7 +14,7 @@ router.post('/', isLoggedIn, async (req, res) => {
 // console.log("made it here", req.body)
         var gryffindor = {house : "gryffindor", count : 0}
         var slytherin = {house : "slytherin", count : 0};
-        var hufflepuff = {house : "hufflepuf", count : 0};
+        var hufflepuff = {house : "hufflepuff", count : 0};
         var ravenclaw = {house : "ravenclaw", count : 0};
 
         for(let question in req.body){
@@ -48,7 +48,6 @@ router.post('/', isLoggedIn, async (req, res) => {
     })
 
     const myHouse = hogwarts[0].house.toUpperCase()
-    console.log("pizza:", hogwarts)
 
 
       // Checking which one is bigger

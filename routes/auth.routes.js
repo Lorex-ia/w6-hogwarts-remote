@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/User.model");
 const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
 const router = require("express").Router();
+const axios = require("axios");
 
 
 //signup page
@@ -27,9 +28,23 @@ router.post('/signup', isLoggedOut, async (req, res) => {
 
         console.log(body);
 
+        // API call to get wands with AXIOS
+        let wands = await axios.get("https://legacy--api.herokuapp.com/api/v1/wands");
+
+        //get a random wand from the data
+        const randomWand = wands.data[Math.floor(Math.random() * wands.data.length)];
+
+        //update the body with the random wand
+        body.wand = randomWand.name;
+
+        console.log(body);
+
         try {
+            // create new user with username and password
             let newUser = await User.create(body);
             req.session.user = newUser;
+
+            // redirect to quiz
             res.redirect('/hatquiz');
         }
         catch (error) {

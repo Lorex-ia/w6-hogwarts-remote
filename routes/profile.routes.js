@@ -33,4 +33,10 @@ router.get('/logout', isLoggedIn, (req, res) => {
     })
 })
 
+//route for characters
+router.get("/community", isLoggedIn, (req, res, next) => {
+    res.render("profile/community", { user: req.session.user, layout: "../views/layouts/profile-layout.ejs" })
+});
+
+
 module.exports = router;

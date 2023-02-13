@@ -16,6 +16,10 @@ const userSchema = new Schema(
     house: {
       type: String,
       required: false,
+    },
+    wand: { // updated the model with the wand
+      type: String, // we will show just the name of the wand
+      required: false,
     }
   },
   {
