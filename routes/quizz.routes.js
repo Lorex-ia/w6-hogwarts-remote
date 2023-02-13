@@ -85,7 +85,8 @@ router.post('/', isLoggedIn, async (req, res) => {
     try {
         let quizUser = await User.findByIdAndUpdate(req.session.user._id, { house: myHouse }, { new: true });
         req.session.user = quizUser;
-        res.redirect('/profile/profile-home');
+        console.log("hey profile")
+        res.redirect('/profile');
     } catch (error) {
         console.error(error);
         res.render('error', { error });
