@@ -83,13 +83,17 @@ router.post('/', isLoggedIn, async (req, res) => {
 
 
     try {
-        const user = await User.findByIdAndUpdate(req.session.user._id, { house: myHouse }, { new: true });
-        req.session.user = user;
-        res.redirect('/profile');
+        let quizUser = await User.findByIdAndUpdate(req.session.user._id, { house: myHouse }, { new: true });
+        req.session.user = quizUser;
+        res.redirect('/profile/profile-home');
     } catch (error) {
         console.error(error);
         res.render('error', { error });
     }
 });
+
+// router.get("/auth/signup-profile", isLoggedIn,  (req, res, next) => {
+//     res.render("auth/signup-profile", { user: req.session.user });
+// });
 
 module.exports = router;
