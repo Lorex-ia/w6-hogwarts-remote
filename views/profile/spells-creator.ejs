@@ -1,0 +1,33 @@
+<h1> Spell Creation Course </h1>
+<p> Create your spell </p>
+
+<div>
+    <p>Dear <%= user.username %>, in order to create your spells and win your next duel for the <%= user.house %> house, follow the instructions below: </p>
+       
+        <!-- START OF TYPING FORM -->
+        <form action="/profile/spells-creator" method="post">
+            <label> Title:
+              <input type="text" name="spellname" />
+            </label>
+
+            <label> Description:
+              <textarea name="description" cols="30" rows="4"> </textarea>
+            </label>
+           
+            <label> Difficulty:
+              <input type="number" name="difficulty" min="1" max="10" />
+            </label>
+           
+            <button type="submit"> Create your spell!</button>
+          </form>
+        <!-- END OF TYPING FORM -->
+
+
+        <!-- ERROR  -->
+        <% if (typeof errorMessage != "undefined") { %>
+            <p> <%= errorMessage %> </p>
+        <% } %>
+        <!-- END OF ERROR-->
+
+    <p>Enjoy your duels!</p>
+</div>

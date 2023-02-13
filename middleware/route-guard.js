@@ -16,7 +16,15 @@ const isLoggedOut = (req, res, next) => {
     next()
 }
 
+
+const isCreator = (req, res, next) => {
+    if (req.user.role === 'creator') next();
+    else res.redirect('/login');
+  }
+
+
 module.exports = {
     isLoggedIn,
     isLoggedOut,
+    isCreator,
 } 
