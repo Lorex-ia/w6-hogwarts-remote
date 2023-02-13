@@ -29,7 +29,7 @@ router.post('/signup', isLoggedOut, async (req, res) => {
         try {
             let newUser = await User.create(body);
             req.session.user = newUser;
-            res.redirect('/hatquizz');
+            res.redirect('/hatquiz');
         }
         catch (error) {
             if (error.code === 11000) {
@@ -85,7 +85,7 @@ router.post('/login', isLoggedOut, async (req, res) => {
             console.log("correct password");
             
             req.session.user = currentUser; 
-            res.redirect('/profile'); ////////
+            res.redirect('/profile'); 
             
         } else {
             // incorrect password
@@ -114,27 +114,23 @@ router.get("/profile", (req, res, next) => {
     layout: "../views/profile/profile-layout.ejs" });
 });
 
-
-
-
 // logout page
 router.get('/logout', isLoggedIn, (req, res) => {
     req.session.destroy(err => {
         if (err) next(err)
         res.redirect('/')
     })
-})
-
-
-
+});
 
 // //Routes for the Quizz part
-  
 
 // router.get('/hatquizz', (req, res) => {
 //     res.render('hatquizz', { user: req.session.user })
 // })
 
+router.get('/hatquiz', isLoggedIn, (req, res) => {
+    res.render('hatquiz/hatquizz', { user: req.session.user })
+});
 
 
 // router.post('/hatquizz', async (req, res) => {
@@ -147,10 +143,5 @@ router.get('/logout', isLoggedIn, (req, res) => {
 //         res.render('error', { error });
 //     }
 // });
-
-
-
-
-
 
 module.exports = router;

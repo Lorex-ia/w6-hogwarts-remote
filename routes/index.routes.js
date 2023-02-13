@@ -4,9 +4,7 @@ const router = express.Router();
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  
-    res.render("index", { user: req.session.user || undefined  });
-  
+  res.render("index", { user: req.session.user || undefined  });
 });
 
 // This is the page that should be rendered after doing the quizz
@@ -23,10 +21,9 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
 });
 
 /* GET & render hat quizz */
-router.get("/hatquizz", (req, res, next) => {
-  res.render("hatquizz");
+router.get("/hatquiz", (req, res, next) => {
+  res.render("hatquiz/hatquizz", { user: req.session.user });
 });
-
 
 router.get('/logout', isLoggedIn, (req, res) => {
   req.session.destroy(err => {
@@ -34,7 +31,5 @@ router.get('/logout', isLoggedIn, (req, res) => {
       res.redirect('/')
   })
 })
-
-
 
 module.exports = router;

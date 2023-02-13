@@ -1,0 +1,72 @@
+<h1><%= appTitle %> </h1>
+<h2> Welcome to the Sorting Hat’s quizz </h2>
+<p>To what House do you belong to? </p>
+
+<form method=“POST” action=“/hatquiz”>
+    <fieldset> 
+        <!-- makes the field - legend is the question -->
+        <legend>You and two friends need to cross a bridge guarded by a river troll who insists on fighting one of you before he will let all of you pass. Do you:</legend>
+        <input type="radio" id=“eagle” name=“animal” value=“ravenclaw”>
+            <label for=“eagle”>Attempt to confuse the troll into letting all three of you pass without fighting?</label> <br>
+        <input type="radio" id=“lion” name=“animal” value=“gryffindor”>
+            <label for=“lion”>Volunteer to fight?</label> <br>
+        <input type="radio" id=“snake” name=“animal” value=“slytherin”>
+            <label for=“snake”>Suggest drawing lots to decide which of you will fight?</label> <br>
+        <input type="radio" id=“badger” name=“animal” value=“hufflepuff”>
+            <label for=“badger”>Suggest that all three of you should fight (without telling the troll)?</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>You enter an enchanted garden. What would you be most curious to examine first?</legend>
+        <input type="radio" id=“lion" name=“garden” value=“gryffindor”>
+            <label for=“lion”>The bubbling pool, in the depths of which something luminous is swirling</label> <br>
+        <input type="radio" id=“badger” name=“garden” value=“hufflepuff”>
+            <label for=“badger">The fat red toadstools that appear to be talking to each other</label> <br>
+        <input type="radio" id=“snake" name=“garden” value=“slytherin”>
+            <label for=“snake”>The silver leafed tree bearing golden apples</label> <br>
+        <input type="radio" id=“eagle” name=“garden” value=“ravenclaw”>
+            <label for=“eagle">The status of an old wizard with a strangely twinkled eye</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>After you have died, what would you like people to do when they hear your name?</legend>
+        <input type="radio" id=“lion” name=“death” value=“gryffindor”>
+            <label for=“lion”>Ask for more stories about your adventures</label> <br>
+        <input type="radio" id=“badger” name=“death” value=“hufflepuff”>
+            <label for=“badger”>Miss you, but smile</label> <br>
+        <input type="radio" id=“snake” name=“death” value=“slytherin”>
+            <label for=“snake”>Think with admiration of your achievements</label> <br>
+        <input type="radio" id=“eagle” name=“death” value=“ravenclaw”>
+            <label for=“eagle”>You don’t care about what they think of you after you’re dead, it’s what they think of you while you’re alive that matters</label>
+    </fieldset>
+
+<!-- From there if needed I’ll need to update all the ’id’s and the ‘for’ -->
+
+    <fieldset>
+        <legend>Which road tempts you most?</legend>
+        <input type="radio" id=“eagle” name=“road” value=“ravenclaw”>
+            <label for=“eagle”>The cobbled street lined with ancient buildings</label> <br>
+        <input type="radio" id=“lion” name=“road” value=“gryffindor”>
+            <label for=“lion”>The twisting, leaf-strewn path through the woods</label><br>
+        <input type="radio" id=“snake” name=“road” value=“slytherin”>
+            <label for=“snake”>The narrow, dark, lantern-lit alley</label><br>
+        <input type="radio" id=“badger” name=“road” value=“hufflepuff”>
+            <label for=“badger”>The wide, sunny, grassy lane</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Late at night, walking alone down the street, you hear a peculiar cry that you believe to have a magical source. Do you:</legend>
+        <input type="radio" id=“lion” name=“night” value=“gryffindor”>
+            <label for=“lion”>Draw your wand and try to discover the source of the noise?</label><br>
+        <input type="radio" id=“badger” name=“night” value=“hufflepuff”>
+            <label for=“badger”>Proceed with caution, keeping an eye on your wand and an eye out for any disturbance?</label><br>
+        <input type="radio" id=“snake” name=“night” value=“slytherin”>
+            <label for=“snake”>Withdraw into the shadows to await developments, while mentally reviewing all defensive and offensive spells you know, shoul trouble occur?</label><br>
+        <input type="radio" id=“eagle” name=“night” value=“ravenclaw”>
+            <label for=“eagle”>Draw your wand and stand your ground?</label>
+    </fieldset>   
+
+<br>
+
+    <button type=“submit”> Discover my House </button>
+</form>
