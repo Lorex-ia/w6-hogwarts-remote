@@ -71,17 +71,15 @@ router.post("/spells-creator", isLoggedIn, async (req, res) => {
 
 
 //GET route to see the list:
-// router.get("/spells-list", isLoggedIn, (req, res, next) => {
-//     res.render("profile/spells-list", { 
-//         user: req.session.user,
-//         layout: "../views/layouts/profile-layout.ejs" });
-// });
 
 router.get('/spells-list', (req, res, next) => {
     Spell.find()
       .then(allSpells => { 
         console.log('Retrieved spells from DB:', allSpells);
-        res.render('profile/spells-list', { spells: allSpells}); // pass `allTheBooksFromDB` to the view (as a variable books to be used in the EJS)
+        res.render("profile/spells-list", { 
+                 spells: allSpells,
+                 user: req.session.user,
+                 layout: "../views/layouts/profile-layout.ejs" });
       })
       .catch(error => {
         console.log('Error while getting the spells from the DB: ', error);

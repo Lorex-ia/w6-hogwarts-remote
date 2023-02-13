@@ -9,3 +9,13 @@
 we can iterate over it here with #each--%>
 
  
+
+<% spells.forEach((spell) => { %>
+
+    <div>
+  
+      <h3><%= spell.spellname %>: <%= spell.description %>, <%= spell.owner %></h3>
+  
+    </div>
+  
+  <% }) %> 
