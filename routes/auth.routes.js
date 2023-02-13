@@ -10,6 +10,7 @@ router.get("/signup", isLoggedOut, (req, res) => {
     res.render("auth/signup", { user: undefined });
 });
 
+
 router.post('/signup', isLoggedOut, async (req, res) => {
     const body = {...req.body};
 
@@ -128,9 +129,11 @@ router.get('/logout', isLoggedIn, (req, res) => {
 //     res.render('hatquizz', { user: req.session.user })
 // })
 
-router.get('/hatquiz', isLoggedIn, (req, res) => {
-    res.render('hatquiz/hatquizz', { user: req.session.user })
-});
+//Dianes' code
+
+// router.get('/hatquiz', isLoggedIn, (req, res) => {
+//     res.render('hatquiz/hatquizz', { user: req.session.user })
+// });
 
 
 // router.post('/hatquizz', async (req, res) => {
