@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require("bcryptjs");
 const User = require("../models/User.model");
-const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
+const { isLoggedIn, isLoggedOut, isCreator } = require('../middleware/route-guard')
 const router = require("express").Router();
 const axios = require("axios");
 
@@ -144,7 +144,6 @@ router.get('/logout', isLoggedIn, (req, res) => {
 //     res.render('hatquizz', { user: req.session.user })
 // })
 
-//Dianes' code
 
 router.get('/hatquiz', isLoggedIn, (req, res) => {
     res.render('hatquiz/hatquizz', { user: req.session.user })

@@ -1,0 +1,21 @@
+<h1> Welcome,  <%= user.username %>, to the list of all the spells created through the history of Hogwarts</h1>
+    <p> Feel free to explore! </p>
+     
+    <h1>Spells list</h1>
+
+
+<%#!-- since we passed allTheBooksFromDB as `books`,
+
+we can iterate over it here with #each--%>
+
+ 
+
+<% spells.forEach((spell) => { %>
+
+    <div>
+  
+      <h3><%= spell.spellname %>: <%= spell.description %>, <%= spell.owner %></h3>
+  
+    </div>
+  
+  <% }) %> 

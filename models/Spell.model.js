@@ -1,14 +1,26 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const userSchema = new Schema(
+const spellSchema = new Schema(
     {
-        name: {
+        spellname: {
         type: String,
         trim: true,
-        required: false,
+        required: true,
         unique: true
         },
+
+        description: {
+            type: String,
+            trim: true,
+            required: true,
+            unique: true
+            },
+
+        difficulty: {
+            type: Number,
+            required: true,
+            },
     
         owner: {
             type: Schema.Types.ObjectId,
@@ -21,6 +33,6 @@ const userSchema = new Schema(
     }
     );
 
-const User = model("User", userSchema);
+const Spell = model("Spell", spellSchema);
 
-module.exports = User;
+module.exports = Spell;

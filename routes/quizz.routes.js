@@ -5,7 +5,7 @@ const User = require("../models/User.model");
 
 
   //Routes for the Quizz part
-  // the / would still be /hatquizz because it is defined in the boucer in app.js
+  // the / would still be /hatquizz because it is defined in the bouncer in app.js
 router.get('/', isLoggedIn, (req, res) => {
     res.render('hatquiz/hatquizz', { user: req.session.user })
 })
@@ -18,7 +18,7 @@ router.post('/', isLoggedIn, async (req, res) => {
         var ravenclaw = {house : "ravenclaw", count : 0};
 
         for(let question in req.body){
-            console.log(req.body[question])
+            // console.log(req.body[question])
 
             if (req.body[question] === "gryffindor" ){
                 gryffindor.count += 1
@@ -34,7 +34,7 @@ router.post('/', isLoggedIn, async (req, res) => {
             } 
         }
 //Console log the points
-    console.log(gryffindor, slytherin, hufflepuff, ravenclaw)
+    // console.log(gryffindor, slytherin, hufflepuff, ravenclaw)
 
     const hogwarts = [gryffindor, slytherin, hufflepuff, ravenclaw]
     hogwarts.sort((a,b) =>{
@@ -48,6 +48,7 @@ router.post('/', isLoggedIn, async (req, res) => {
     })
 
     const myHouse = hogwarts[0].house.toUpperCase()
+
 
 
       // Checking which one is bigger
@@ -79,12 +80,9 @@ router.post('/', isLoggedIn, async (req, res) => {
 
 
     console.log("this is your house:", myHouse, req.session)
-
-
     try {
         let quizUser = await User.findByIdAndUpdate(req.session.user._id, { house: myHouse }, { new: true });
         req.session.user = quizUser;
-        console.log("hey profile")
         res.redirect('/profile');
     } catch (error) {
         console.error(error);
@@ -92,8 +90,5 @@ router.post('/', isLoggedIn, async (req, res) => {
     }
 });
 
-// router.get("/auth/signup-profile", isLoggedIn,  (req, res, next) => {
-//     res.render("auth/signup-profile", { user: req.session.user });
-// });
 
 module.exports = router;
