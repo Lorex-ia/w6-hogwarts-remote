@@ -1,0 +1,20 @@
+<h1>EDIT THIS SPELL</h1>
+
+ <form method="POST" action="/profile/spells-list/<%- spell._id %>/update">
+            <label> Title:
+                <input type="text" name="spellname" value="<% if (update) { %><%= spell.spellname %><% } %>" />
+            </label>
+
+            <label> Description:
+                <textarea name="description" cols="30" rows="4" value="<% if (update) { %><%= spell.description %><% } %>"> </textarea>
+            </label>
+            
+            <label> Difficulty:
+                <input type="number" name="difficulty" min="1" max="10" value="<% if (update) { %><%= spell.difficulty %><% } %>"/>
+            </label>
+            
+            <button type="submit"> Create your spell!</button>
+            </form>
+        <!-- END OF TYPING FORM -->
+
+  </form>
