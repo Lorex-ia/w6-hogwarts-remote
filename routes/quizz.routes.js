@@ -11,15 +11,40 @@ router.get('/', isLoggedIn, (req, res) => {
 })
 
 router.post('/', isLoggedIn, async (req, res) => {
-// console.log("made it here", req.body)
+    console.log("made it here, here is the req body:", req.body)
+
+//Diana:
+    console.log("diana: ");
+
+    let keys = Object.keys(req.body);
+    console.log(keys[0] + keys[1] + keys[2] + keys[3] + keys[4] + "here are the keys" );
+
+    let questionNamesArray = [
+        "animal",
+        "garden",
+        "death",
+        "road",
+        "night",
+    ];
+
+    let checkIfAllAnswersAreFilled = true;
+
+    //check if all the answers are filled
+    for (let i = 0; i < questionNamesArray.length; i++) {
+        if ( keys[i] !== questionNamesArray[i] ) {
+            checkIfAllAnswersAreFilled = false;
+        }
+    }
+
+
+
+ //Alexia:
         var gryffindor = {house : "gryffindor", count : 0}
         var slytherin = {house : "slytherin", count : 0};
         var hufflepuff = {house : "hufflepuff", count : 0};
         var ravenclaw = {house : "ravenclaw", count : 0};
 
         for(let question in req.body){
-            console.log(req.body[question])
-
             if (req.body[question] === "gryffindor" ){
                 gryffindor.count += 1
             }
@@ -91,12 +116,24 @@ router.post('/', isLoggedIn, async (req, res) => {
         let quizUser = await User.findByIdAndUpdate(req.session.user._id, { house: myHouseUpper }, { new: true });
         req.session.user = quizUser;
 
+//Diana:
+    //if checkIfAllAnswersAreFilled == false, render the hatquizz page again with the error message
+        if (checkIfAllAnswersAreFilled == false) {
+            res.render('hatquiz/hatquizz', { 
+                errorMessage: "!!!!!!Please answer all the questions!!!!",
+                user: req.session.user, 
+            })
+        }
+        else { // render..
+
         //Diana:
 //i put below code to render the page i created that generates the profile with the the sorted house and wand - it's in the auth folder under the name after-quiz-acceptance
 // so what i changed is that after you get your house sorted it will redirect to the acceptance page (it was redirecting directly to the /profile before)
         res.render('auth/after-quiz-acceptance', { user: req.session.user }); 
 
-        //Alexia:
+        }
+
+//Alexia:
         // console.log("hey profile")
         // res.redirect('/profile'); //here it was /profile 
     } catch (error) {

@@ -3,7 +3,7 @@
     Your Hogwarts Remote Student profile INFORMATION</h1>
 
 <div>
-    <p>Your Hogwarts Remote Username: <%= user.username %> </p>
+    <p>Your Hogwarts Remote Name: <%= user.username %> </p>
 
     <p>  <% 
         if (user.house) { %> 
@@ -13,6 +13,19 @@
     <p>
     
     <p>Your assigned Wand is: <%= user.wand %></p>
+
+    <p> House Password:
+        <% if (user.house === "Gryffindor") { %>
+            "some password for Gryffindor"
+        <% } else if (user.house === "Ravenclaw") { %>
+            "some password for Ravenclaw"
+        <% } else if (user.house === "Hufflepuff") { %>
+            "some password for Hufflepuff"
+        <% } else if (user.house === "Gryffindor") { %>
+            "some password for Gryffindor"
+        <% } %>
+        
+    </p>
 
     <p>Enjoy Hogwarts!</p>
 </div>
