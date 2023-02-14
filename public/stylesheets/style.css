@@ -70,6 +70,12 @@ h1 {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+#charactersRavenclaw div{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /* characters alumni BY  -- HOUSE ---->>>>>> HUFFLEPUFF <<<<<---  styling */
 #charactersHufflepuff{
@@ -90,6 +96,12 @@ h1 {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+#charactersHufflepuff div{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /* characters alumni BY  -- HOUSE ---->>>>>> SLYTHERIN <<<<<---  styling */
 #charactersSlytherin{
@@ -109,4 +121,10 @@ h1 {
 #charactersSlytherin::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
+}
+#charactersSlytherin div{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
