@@ -1,0 +1,57 @@
+<div>
+    <p>
+        These are the details of...
+        <%= character.name %>
+    </p>
+
+    <div id="displayDetailsList">
+        <ul id="characterDetailsList">
+            <% for (let i=0; i<keys.length; i++) { %>
+            
+                <% if ( keys[i] === "image" && (character.image) ) { %>
+                    <li id="characterDetailsItem">
+                        <img src="<%= character.image %>"  alt="character image"/>
+                    </li>
+
+                <% } else if ( typeof character[keys[i]] === 'string' || typeof character[keys[i]] === 'number') { %>
+                    <li id="characterDetailsItem">
+                        <span >
+                            <%= keys[i] %> :
+                            <%= character[keys[i]]%> 
+                        </span>
+                    </li>
+
+                <% } else if ( keys[i] === "wand" ) {
+                        if (character.wand.wood || character.wand.core) { %>
+                            <li id="characterDetailsItem">
+                        <span >
+                            wand :
+                            <% if (character.wand.wood) { %>
+                            wood : <%= character.wand.wood %> 
+                            <% } if ( character.wand.core) { %>
+                            core : <%= character.wand.core %> 
+                            <% } %>
+                            
+                        </span>
+                    </li>
+                    <% }  %>
+
+                <% } else if ( typeof character[keys[i]] === 'boolean' && character[keys[i]] === 'true' ) { %>
+                    <li id="characterDetailsItem">
+                        <span >
+                            is part of <%= keys[i] %> 
+                        </span>
+                    </li>
+                <% }  %>
+
+
+            <% } %> 
+            <!-- END OF FOR LOOP THE KEYS -->
+            
+        </ul>
+    </div> 
+    <!-- END OF DISPLAYING THE CHARACTER DETAILS -->
+
+
+    <a href="/profile/house-characters">Back to Character List</a>
+</div>

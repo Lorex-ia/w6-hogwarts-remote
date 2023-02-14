@@ -1,6 +1,7 @@
 const express = require('express');
 const { isLoggedIn } = require('../middleware/route-guard');
 const router = express.Router();
+const axios = require('axios');
 
 /* GET Hogwarts home page */
 router.get("/", isLoggedIn, (req, res, next) => {
@@ -46,5 +47,34 @@ router.get("/house-characters", isLoggedIn, (req, res, next) => {
     .catch( (err) => console.log(err) )
 });
 
+//route for characters details page
+router.get("/house-characters/:id", isLoggedIn, async (req, res, next) => {
+    let characters = await axios.get(`https://hp-api.onrender.com/api/characters  `);
+
+    //find the character by id in API
+    let character = characters.data.find(character => character.id == req.params.id);
+
+    //remove the keys with empty values and also remove the keys that i dont feel like displaying (they are a lot of keys in the API as you can see..) 
+    let keysWithoutEmptyFields = Object.keys(character).filter(key => 
+                character[key] !== "" && 
+                character[key] !== null && 
+                character[key] !== undefined &&  
+                character[key].length !== 0 &&
+                key !== "id" && 
+                key !== "alternate_names" && 
+                key !== "species" && 
+                key !== "gender" && 
+                key !== "wizard" &&
+                key !== "alternate_actors" && 
+                key !== "alive"
+    );
+
+    res.render("profile/house-characters-details", { 
+        user: req.session.user, 
+        character: character,
+        keys: keysWithoutEmptyFields,
+        layout: "../views/layouts/profile-layout.ejs" 
+    });
+});
 
 module.exports = router;

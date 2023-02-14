@@ -68,7 +68,6 @@ router.post('/signup', isLoggedOut, async (req, res) => {
 });
 
 
-
 router.get('/signup-profile', isLoggedIn, (req, res) => {
     res.render('auth/signup-profile', { user: req.session.user });
 
@@ -90,8 +89,6 @@ router.post('/login', isLoggedOut, async (req, res) => {
     const body = {...req.body};
 
     const userMatch = await User.find({username: body.username}); // find -> array
-    console.log(userMatch);
-    console.log("it s a match")
 
     if (userMatch.length) {   // find has an element (match)
         // user found
@@ -112,11 +109,12 @@ router.post('/login', isLoggedOut, async (req, res) => {
             });
         }
     } else { 
-        // user not found
-        console.log("user not found");
-        res.render('auth/login', { 
-            errorMessage: "User not found", 
-            userData: req.body,
+        // user not found - i ve updated because it didnt work properly
+        console.log("user not found, should go now to signup page but on that page now it should also display the error message written below");
+
+        res.render('auth/signup', { 
+            errorMessageFromLogin: "User not found, you have to get the letter first", 
+            user: undefined,
         });
 
     }

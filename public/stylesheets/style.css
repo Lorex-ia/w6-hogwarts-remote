@@ -43,6 +43,13 @@ h1 {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+#charactersGryffindor div{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* characters alumni BY  -- HOUSE ---->>>>>> RAVENCLAW <<<<<---  styling */
 #charactersRavenclaw{
