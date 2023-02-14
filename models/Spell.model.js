@@ -7,14 +7,12 @@ const spellSchema = new Schema(
         type: String,
         trim: true,
         required: true,
-        unique: true
         },
 
         description: {
             type: String,
             trim: true,
             required: true,
-            unique: true
             },
 
         difficulty: {

@@ -12,6 +12,7 @@ router.get('/', isLoggedIn, (req, res) => {
 
 router.post('/', isLoggedIn, async (req, res) => {
 // console.log("made it here", req.body)
+//These below are the names that get printed:
         var gryffindor = {house : "gryffindor", count : 0}
         var slytherin = {house : "slytherin", count : 0};
         var hufflepuff = {house : "hufflepuff", count : 0};

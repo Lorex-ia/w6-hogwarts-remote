@@ -1,0 +1,25 @@
+<h1> These are my spells</h1>
+
+<ul>
+    <% if (spells.length === 0) { %>
+      <p>You don't have any spells yet. Create one to have access to Hogwart's historical secret spell list!</p>
+    <% } else { %>
+      <% spells.forEach((spell) => { %>
+        <% if (spell.owner.toString() === user._id.toString()) { %>
+          <div style="border: 1px solid black; margin:1rem; padding:1rem" >
+            <h3><%= spell.spellname %></h3>
+            <p><%= spell.description %></p>
+            <p><%= spell.difficulty %></p>
+            <a href ="/profile/spell-details/<%- spell._id %>">Update my spell</a>
+          </div>
+        <% } %>
+      <% }); %>
+    <% } %>
+  </ul>
+
+
+<button>
+    <a href="/profile/spells-creator"> Create a new spell</a>
+ </button>
+
+

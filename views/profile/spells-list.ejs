@@ -7,12 +7,11 @@
 <% spells.forEach((spell) => { %>
 
     <div style="border: 1px solid black; margin:1rem; padding:1rem" >
-  
-      <h3><%= spell.spellname %>:</h3>
-      <p>by <%= spell.owner %> </p>
-      <a href ="/profile/spell-details/<%- spell._id %>">See spell details</a>
-      
-  
+      <h3><%= spell.spellname %></h3>
+      <h4>Description: <%= spell.description %></h4>
+      <p>by <%= spell.owner.username %> </p>
     </div>
   
   <% }) %> 
+
+

@@ -19,11 +19,30 @@ router.get("/", isLoggedIn, (req, res, next) => {
     }
 });
 
-router.get("/profile-info", isLoggedIn, (req, res, next) => {
-    res.render("profile/profile-info", { 
+// router.get("/profile-info", isLoggedIn, (req, res, next) => {
+//     res.render("profile/profile-info", { 
+//         user: req.session.user,
+//         layout: "../views/layouts/profile-layout.ejs" });
+// });
+
+//new profile info route to count the number of spells
+router.get("/profile-info", isLoggedIn, async (req, res, next) => {
+    try {
+      const userId = req.session.user._id;
+      const spells = await Spell.find({ owner: userId });
+      const numSpells = spells.length;
+      res.render("profile/profile-info", { 
         user: req.session.user,
-        layout: "../views/layouts/profile-layout.ejs" });
-});
+        numSpells: numSpells,
+        layout: "../views/layouts/profile-layout.ejs"
+      });
+    } catch (error) {
+      console.log(error);
+      res.redirect("/");
+    }
+  });
+
+
 
 router.get("/lounge", isLoggedIn, (req, res, next) => {
     res.render("profile/lounge", { user: req.session.user, layout: "../views/layouts/profile-layout.ejs" })
@@ -40,6 +59,7 @@ router.get('/logout', isLoggedIn, (req, res) => {
 router.get("/community", isLoggedIn, (req, res, next) => {
     res.render("profile/community", { user: req.session.user, layout: "../views/layouts/profile-layout.ejs" })
 });
+
 
 
 
@@ -81,7 +101,7 @@ router.post("/spells-creator", isLoggedIn, async (req, res) => {
 // READ ROUTES:
 //GET route to see the list of ALL spells:
 router.get('/spells-list', (req, res, next) => {
-    Spell.find()
+    Spell.find({}).populate('owner')
       .then(allSpells => { console.log('Retrieved spells from DB:', allSpells); res.render("profile/spells-list", { 
                  spells: allSpells,
                  user: req.session.user,
@@ -100,13 +120,6 @@ router.get('/spells-list', (req, res, next) => {
     res.render('profile/spell-details', { user: req.session.user, spellFound })
   })
 
-// router.get('/:id', (req, res, next) => {
-//     const { id } = req.params
-//     Spell.findById(id)
-//     .then( (oneSpell) => res.render('spell-details', { oneSpell, user: req.session.user }))
-//     .catch( (err) => next(err));
-//   })
-
 
 
 // UPDATE ROUTES
@@ -120,12 +133,12 @@ router.get('/spells-list/:spellId/update', async (req, res) => {
   
   // POST '/spells/:id/edit' route to edit the spell
   router.post('/spells-list/:spellId/update', async (req, res) => {
-console.log("We're in the post")
+    console.log("We're in the post")
     try{
         await Spell.findByIdAndUpdate(req.params.spellId, {
             ...req.body,
         })
-        res.redirect(`/profile/spells-list`)
+        res.redirect(`/profile/user-spells`)
     } catch(err){
         console.log(err)
     }
@@ -135,11 +148,32 @@ console.log("We're in the post")
 
 
 
-
 //DELETE route 
 router.post('/:spellId/delete', async (req, res) => {
     await Spell.findByIdAndDelete(req.params.spellId)
-    res.redirect('/profile/spells-list')
+    res.redirect('/profile/user-spells')
   })
+
+
+
+
+// User spells route 
+router.get("/user-spells", isLoggedIn, (req, res, next) => {
+    Spell.find({ owner: req.session.user._id }) // Filter spells that belong to the logged-in user
+      .then(userSpells => {
+        console.log('Retrieved user spells:', userSpells);
+        res.render("profile/user-spells", { 
+          spells: userSpells, // Pass the filtered spells to the view
+          user: req.session.user,
+          layout: "../views/layouts/profile-layout.ejs"
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  });
+
+
+
 
 module.exports = router;
