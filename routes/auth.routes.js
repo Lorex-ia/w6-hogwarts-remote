@@ -25,6 +25,9 @@ router.post('/signup', isLoggedOut, async (req, res) => {
 
         delete body.password;
         body.passwordHash = passwordHash;
+        
+        // did the first letter of username to uppercase
+        body.username = body.username.charAt(0).toUpperCase() + body.username.slice(1);
 
         console.log(body);
 

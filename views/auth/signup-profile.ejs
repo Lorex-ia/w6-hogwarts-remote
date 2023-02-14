@@ -1,18 +1,16 @@
-<!-- TO DO : BUTTON SHOULD GO TO PROFILE HOME -->
-
 <h1>Your Hogwarts Remote Student profile</h1>
 
 <div>
     <p>Welcome, <%= user.username %> </p>
-
+    
     <p>  <% 
         if (user.house) { %> 
             House of <%= user.house %> </p>
             <% } 
         %>
     <p>
-        Your assigned wand is: <%= user.wand %>
-    </p>
+
+    <p>Your assigned wand is: <%= user.wand %></p>
 
     <p>Enjoy Hogwarts!</p>
 

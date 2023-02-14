@@ -47,7 +47,13 @@ router.post('/', isLoggedIn, async (req, res) => {
         }
     })
 
-    const myHouse = hogwarts[0].house.toUpperCase()
+    // Alexia's code
+    // const myHouse = hogwarts[0].house.toUpperCase()
+
+
+    // Diana's trial for just the first letter uppercase
+    const myHouse = hogwarts[0].house;//from Alexia
+    const myHouseUpper = myHouse.charAt(0).toUpperCase() + myHouse.slice(1);
 
 
       // Checking which one is bigger
@@ -82,18 +88,21 @@ router.post('/', isLoggedIn, async (req, res) => {
 
 
     try {
-        let quizUser = await User.findByIdAndUpdate(req.session.user._id, { house: myHouse }, { new: true });
+        let quizUser = await User.findByIdAndUpdate(req.session.user._id, { house: myHouseUpper }, { new: true });
         req.session.user = quizUser;
-        console.log("hey profile")
-        res.redirect('/profile');
+
+        //Diana:
+//i put below code to render the page i created that generates the profile with the the sorted house and wand - it's in the auth folder under the name after-quiz-acceptance
+// so what i changed is that after you get your house sorted it will redirect to the acceptance page (it was redirecting directly to the /profile before)
+        res.render('auth/after-quiz-acceptance', { user: req.session.user }); 
+
+        //Alexia:
+        // console.log("hey profile")
+        // res.redirect('/profile'); //here it was /profile 
     } catch (error) {
         console.error(error);
         res.render('error', { error });
     }
 });
-
-// router.get("/auth/signup-profile", isLoggedIn,  (req, res, next) => {
-//     res.render("auth/signup-profile", { user: req.session.user });
-// });
 
 module.exports = router;

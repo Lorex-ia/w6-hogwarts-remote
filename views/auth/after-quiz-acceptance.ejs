@@ -1,0 +1,32 @@
+<!-- TO DO : BUTTON SHOULD GO TO PROFILE HOME -->
+
+<h1>Your Hogwarts Remote Student profile</h1>
+
+<div>
+    <p>Welcome, <%= user.username %>, <br>
+        We are pleased to inform you that you have been accepted to Hogwarts Remote School of Witchcraft & Wizardry.<br>
+        <br>
+        You have been sorted into the following house: 
+        <%= user.house %>.<br>
+        <br>
+        I think you already know Mr. Ollivander, he already sent you a 
+        welcoming gift and he left a message that says:<br>
+            "The wand chooses the Wizard, <%= user.username %>!
+                It's not always clear why. 
+                    But I think it is clear that we can expect great things from you."<br>
+                    <br>
+        So let's see what you got!<br>
+        Aaa, <%= user.wand %>! Perfect! Make sure you will use it to the fullest! <br>
+        <br>
+        One more thing.. make sure you will check your profile after you login into the Remote Hogwarts account, you'll have there your house password to use to get into the House Lounge.<br>
+        <br>
+        Now I'll let you enjoy Hogwarts!
+    </p>
+
+    <a href="/profile">
+        <button>
+            Go to Hogwarts Remote
+        </button>
+    </a>
+
+</div>
