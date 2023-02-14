@@ -3,9 +3,16 @@
     Your Hogwarts Remote Student profile INFORMATION</h1>
 
 <div>
-    <p>Welcome, <%= user.username %> </p>
-    <p>House of <%= user.house %> </p>
-    <p>Your assigned wand is: <%= user.wand %></p>
+    <p>Your Hogwarts Remote Username: <%= user.username %> </p>
+
+    <p>  <% 
+        if (user.house) { %> 
+            House of <%= user.house %> </p>
+            <% } 
+        %>
+    <p>
+    
+    <p>Your assigned Wand is: <%= user.wand %></p>
 
     <p>Enjoy Hogwarts!</p>
 </div>

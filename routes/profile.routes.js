@@ -33,9 +33,17 @@ router.get('/logout', isLoggedIn, (req, res) => {
     })
 })
 
-//route for characters
-router.get("/community", isLoggedIn, (req, res, next) => {
-    res.render("profile/community", { user: req.session.user, layout: "../views/layouts/profile-layout.ejs" })
+//route for characters page
+router.get("/house-characters", isLoggedIn, (req, res, next) => {
+    fetch(`https://hp-api.onrender.com/api/characters`)
+    .then(response => response.json())
+    .then(characters => {
+        res.render("profile/house-characters", { 
+            user: req.session.user, 
+            characters: characters,
+            layout: "../views/layouts/profile-layout.ejs" })
+    })
+    .catch( (err) => console.log(err) )
 });
 
 

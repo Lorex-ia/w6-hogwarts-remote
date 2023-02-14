@@ -1,0 +1,74 @@
+<h2>
+    Alumni
+</h2>
+
+<div id="charactersByHouse">
+    <div id="charactersGryffindor">
+        <h2>House Gryffindor</h2>
+            <% characters.forEach(character =>  { 
+                if (character.house == "Gryffindor") {
+                    %>
+                        <div>
+                            <h3><%= character.name %></h3>
+
+                            <% if (character.image) { %>
+                                <img src="<%= character.image %>" alt="character image"> 
+                                <% 
+                            }  %>
+
+                            
+                        </div>
+                    <% }   
+            }) %>
+    </div>
+
+    <div id="charactersRavenclaw">
+        <h2>House Ravenclaw</h2>
+        <% characters.forEach(character =>  { 
+                if (character.house == "Ravenclaw") {
+                    %>
+                        <div>
+                            <h3><%= character.name %></h3>
+                            <% if (character.image) { %>
+                                <img src="<%= character.image %>" alt="character image"> 
+                                <% 
+                            }  %>
+                        </div>
+                    <% }   
+        }) %>
+
+    </div>
+
+    <div id="charactersHufflepuff">
+        <h2>House Hufflepuff</h2>
+        <% characters.forEach(character =>  { 
+                if (character.house == "Hufflepuff") {
+                    %>
+                        <div>
+                            <h3><%= character.name %></h3>
+                            <% if (character.image) { %>
+                                <img src="<%= character.image %>" alt="character image"> 
+                                <% 
+                            }  %>
+                        </div>
+                    <% }   
+        }) %>
+
+    </div>
+
+    <div id="charactersSlytherin">
+        <h2>House Slytherin</h2>
+        <% characters.forEach(character =>  { 
+                if (character.house == "Slytherin") {
+                    %>
+                        <div>
+                            <h3><%= character.name %></h3>
+                            <% if (character.image) { %>
+                                <img src="<%= character.image %>" alt="character image"> 
+                                <% 
+                            }  %>
+                        </div>
+                    <% }   
+        }) %>
+    </div>
+</div>
