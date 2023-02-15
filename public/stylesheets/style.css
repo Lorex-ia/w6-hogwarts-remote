@@ -349,7 +349,7 @@ a {
 
 /* Different backgrounds for the home and lounge areas */
 .gryffindor {
-  background-image: url('/images/gryff1.jpg');
+  background-image: url('/images/gryf1.jpg');
   background-size: 90%;
   background-position: left 50px;
   background-position-x: 200px;
@@ -374,6 +374,43 @@ a {
 
 .slytherin {
   background-image: url('/images/slyth1.jpg');
+  background-size: 110%;
+  background-position: left 50px;
+  background-position-x: 200px;
+  background-position-y: 150px;
+}
+
+
+/* // Code for the louge houses */
+
+.second-gryffindor {
+  /* background-image: url('/images/gryf1.jpg'); */
+  background-image: url('/images/gryf.gif');
+  background-size: 110%;
+  background-position: left 50px;
+  background-position-x: 250px;
+  background-position-y: 150px;
+}
+
+
+.second-hufflepuff {
+  background-image: url('/images/huff.gif');
+  background-size: 90%;
+  background-position: left 50px;
+  background-position-x: 200px;
+  background-position-y: 150px;
+}
+
+.second-ravenclaw {
+  background-image: url('/images/rave.gif');
+  background-size: 90%;
+  background-position: left 50px;
+  background-position-x: 200px;
+  background-position-y: 150px;
+}
+
+.second-slytherin {
+  background-image: url('/images/slyth.gif');
   background-size: 90%;
   background-position: left 50px;
   background-position-x: 200px;

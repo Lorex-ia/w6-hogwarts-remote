@@ -1,6 +1,6 @@
 
 <div>
-    <h2> Welcome to House Lounges, <%= user.username %> </h2>
+    <h2> Welcome to your house lounge, <%= user.username %> </h2>
 
     <p>  
         Us here, at Remote Hogwarts School, value your time. 
@@ -8,7 +8,7 @@
         Your time means fun time. So what does it rhyme with? 
         <br>
         <br>
-        Yep. You've guessed it. LOUNGE TIME!
+        Yep. You've guessed it: LOUNGE TIME!
         <br>
         <br>
         So.. we updated that boring name ("Common Room"...so sad, so dull) to: House Lounge (better, hyper, right?). 
@@ -31,13 +31,14 @@
      
 
     </p>
-    
+    <h2>
     <form method="POST" action="/profile/lounge">
         <label> Type your secret House Password here:
             <input type="text" name="typedHousePassword" required >
         </label>
+    </h2>
     
-        <button type="submit">I want lounge time!</button>
+        <button type="submit">Lounge time!</button>
     </form>
 
 </div>

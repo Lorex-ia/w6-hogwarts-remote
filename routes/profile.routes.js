@@ -80,6 +80,9 @@ router.get("/lounge", isLoggedIn, (req, res, next) => {
         layout: "../views/layouts/profile-layout.ejs" })
 });
 
+
+
+
 //SECOND FOR      POST      LOUNGE
 router.post("/lounge", isLoggedIn, (req, res, next) => {
     console.log("made it to the lounge post, this is the req body:");
@@ -174,25 +177,29 @@ router.post("/lounge", isLoggedIn, (req, res, next) => {
 router.get("/lounges/gryff", isLoggedIn, (req, res, next) => {
     res.render("profile/lounges/gryff-lounge", { 
         user: req.session.user, 
-        layout: "../views/layouts/profile-layout.ejs" })
+        // layout: "../views/layouts/profile-layout.ejs" 
+    })
 });
 
 router.get("/lounges/huff", isLoggedIn, (req, res, next) => {
     res.render("profile/lounges/huff-lounge", { 
         user: req.session.user, 
-        layout: "../views/layouts/profile-layout.ejs" })
+        // layout: "../views/layouts/profile-layout.ejs" 
+    })
 });
 
 router.get("/lounges/rave", isLoggedIn, (req, res, next) => {
     res.render("profile/lounges/rave-lounge", { 
         user: req.session.user, 
-        layout: "../views/layouts/profile-layout.ejs" })
+        // layout: "../views/layouts/profile-layout.ejs" 
+    })
 });
 
 router.get("/lounges/slyth", isLoggedIn, (req, res) => {
     res.render("profile/lounges/slyth-lounge", { 
         user: req.session.user, 
-        layout: "../views/layouts/profile-layout.ejs" })
+        // layout: "../views/layouts/profile-layout.ejs" 
+    })
 });
 
 //  ROUTER FOR      LOGOUT
