@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><%= appTitle %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/index-style.css" />
 
   </head>
 
@@ -13,7 +13,7 @@
 
     <!-- i added this part below: -----user.house !== undefined---- so that the user cannot click on profile or logout without going through the sorting quiz // everyone needs a house! :D  --> 
 
-    <div id="indexLayoutNav">
+    <div id="indexLayoutNav" >
     <% 
         if (user && user.house !== undefined) { %>  
     <nav>
@@ -28,6 +28,10 @@
 
     <%- body %>
 
+    <embed  src="audio/HogwartsMusic.mp3" 
+            loop=2
+            autostart="true" 
+        >
     <script src="/js/script.js"></script>
   </body>
 </html>
