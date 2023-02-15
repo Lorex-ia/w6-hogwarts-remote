@@ -23,6 +23,13 @@ router.get("/profile-info", isLoggedIn, (req, res, next) => {
         layout: "../views/layouts/profile-layout.ejs" });
 });
 
+// ROUTE FOR      SYLLABUS
+router.get("/syllabus", isLoggedIn, (req, res, next) => {
+    res.render("profile/syllabus", { 
+        user: req.session.user,
+        layout: "../views/layouts/profile-layout.ejs" });
+});
+
 // ROUTES FOR     HOUSE LOUNGE    -- WHOOP WHOOP PARTEEEY
 
 //FIRST FOR       GET      LOUNGE

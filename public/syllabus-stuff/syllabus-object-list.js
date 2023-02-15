@@ -1,4 +1,5 @@
     // TODO: NEED MORE SYLLABUS
+    // created with the help of ChatGPT
 
 const syllabus = [
     {
