@@ -1,19 +1,21 @@
-<h2>Prove you are a Hogwarts student. Login in using your username and password below.</h2>
 
-<form method="POST" action="/auth/login">
+<div id="loginBody">
 
-    <label> Name: 
-        <input type="text" name="username" required >
-    </label>
+    <form id="loginForm" method="POST" action="/auth/login">
 
-    <label> Password:
-        <input type="password" name="password" required >
-    </label>
+        <label class="loginInput"> 
+            <input type="text" name="username" placeholder="Name" required >
+        </label>
 
-    <button type="submit">Log in to your profile</button>
+        <label class="loginInput">
+            <input type="password" name="password" placeholder="Password" required >
+        </label>
 
-</form>
+        <button id="loginButton" type="submit">Prove it</button>
 
-<% if (typeof errorMessage != "undefined") { %>
-    <p> <%= errorMessage %> </p>
-<% } %>
+    </form>
+
+    <% if (typeof errorMessage != "undefined") { %>
+        <p> <%= errorMessage %> </p>
+    <% } %>
+</div>

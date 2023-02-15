@@ -4,6 +4,12 @@ body {
         
         overflow: hidden;
 
+        background-image: url( ../images/HogwartsBackgroundImage.jpg );
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        cursor: url('../images/lumosCursor.png') 32 32, auto;
     }
 
 /* .intro{
@@ -19,6 +25,31 @@ a {
     
     }
 
+    input, textarea {
+        font-family:inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        color: inherit;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        padding: 0;
+        margin: 0;
+    
+    }
+    button, select, textarea
+    {
+        font-family:inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        background: none;
+    
+        cursor: url('../images/lumosCursor.png') 32 32, auto;
+    
+        
+    }
 
 /* /// ----------END OF       LAYOUT        STYLING --------- */
 
@@ -72,6 +103,8 @@ a {
 }
 
 #firstpage-welcome-div {
+    color: hsla(34, 30%, 82%, 0.6);
+    
 
 }
 #welcomeText {
@@ -82,8 +115,170 @@ a {
 }
 
 #firstpage-buttons-div {
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
 }
+
 #firstpage-button {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+    font-weight: bold;
+}
+#firstpage-button:hover {
+    background-color: #fd8b7f;
+    border-color: rgba(196, 94, 94, 0.905); 
+    color: rgb(153, 65, 65);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/* /// ----------END OF       INDEX        STYLING --------- */
+/*  ---------- START     LOGIN        STYLING --------- */
+#loginBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 13vh;
+
+    cursor: url('../images/lumosCursor.png') 32 32, auto;
+}
+.loginInput {
+    width: 100%;
+    height: 100%;
+    border: #deb221 solid 1px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.loginInput:focus {
+    outline: none;
+    border: #deb221 solid 2px;
+    border-radius: 12px;
+    padding: 10px;
+}
+.loginInput::placeholder {
+    color: hsl(46, 88%, 74%);
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 10px;
+}
+.loginInput:focus::placeholder {
+    color: hsl(46, 88%, 74%);
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 10px;
+}
+#loginButton {
+    width: 60%;
+    height: 70%;
+    border: #deb221 solid 1px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+
+    cursor: url('../images/lumosCursor.png') 32 32, auto;
 
 }
+#loginButton:hover {
+    border-color: hsl(46, 54%, 74%) solid 2px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #58535399;
+    background-color: #58535399;
+
+
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#loginButton:active {
+    border-color: #deb221 solid 2px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#loginButton:focus {
+    border-color: #deb221 solid 2px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#loginButton:hover:focus {
+    border-color: #deb221 solid 2px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#loginButton:active:focus {
+    border-color: #deb221 solid 2px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#loginButton:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+}
+#loginButton:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+
+/* /// ----------END OF       LOGIN        STYLING --------- */
+/*  ---------- START     SIGNUP        STYLING --------- */
+
+
+
+/* /// ----------END OF       SIGNUP        STYLING --------- */
