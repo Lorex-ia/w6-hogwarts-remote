@@ -10,7 +10,8 @@ const axios = require('axios');
 router.get("/", isLoggedIn, (req, res, next) => {
     res.render("profile/profile-home", { 
         user: req. session.user,
-        layout: "../views/layouts/profile-layout.ejs" }
+        layout: "../views/layouts/profile-layout.ejs"
+     }
     );
     
     console.log('SESSION =====> ', req.session);
