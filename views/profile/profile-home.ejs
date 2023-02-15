@@ -1,2 +1,6 @@
-<p> Welcome Home, <%= user.username %>, from house <%= user.house %> </p>
+<!-- This ensures the background image changes depending on the house the user is in -->
+<body class="<%= user.house.toLowerCase() %>">
 
+    <p> Welcome home, <%= user.username %>, from house <%= user.house %> </p>
+  </body>
+  

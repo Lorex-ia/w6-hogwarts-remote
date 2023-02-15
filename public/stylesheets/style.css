@@ -3,11 +3,53 @@
 body {
   font-family: 'Jim Nightshade', cursive;
   margin:0;
-  background-image: url('/images/hog4.png');
-  background-size: cover;
+  /* background-image: url('/images/hog.png');
+  background-size: cover; */
   
-  /* background-color:rgba(228, 224, 214, 0.9) */
+  background-color:rgba(228, 224, 214, 0.9)
 
+}
+
+img {
+  vertical-align: middle;
+
+}
+
+
+.titlelogo{
+  display:flex;
+  flex-direction:row;
+  margin-top: 0px;
+  padding-top: 20px;
+
+}
+
+.profile{
+  color:#EEBA30;
+
+  height: 80px;
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.opt{
+  margin-right:50px;
+  width:100px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.txt{
+  color:#EEBA30;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -90px;
 }
 
 
@@ -25,6 +67,7 @@ h1 {
   margin-left: 250px;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 150px;
   background-color: rgba(0,0,0,0.8);
   color: #ffc400;
@@ -32,9 +75,9 @@ h1 {
 }
 
 .navbar-logo {
-  height: 80px;
-  width:80px;
-  margin-right: 50px;
+  height: 70px;
+  width:70px;
+  margin-top:10px;
   border-radius: 50%;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
 }
@@ -45,6 +88,9 @@ h1 {
   font-weight: normal;
   margin-left: 10px;
   color: #ffc400;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .navbar-left {
@@ -54,12 +100,12 @@ h1 {
   bottom: 0;
   width: 250px;
   /* background: linear-gradient(to right top, rgba(180, 170, 170, 0.513), rgba(20, 20, 20, 0.614)); */
-  background:rgba(255, 187, 0, 0.9);
+  background:rgba(255, 187, 0, 0.86);
   display:flex;
   justify-content: space-between;
   flex-direction: column;
   flex-wrap:wrap;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.5);
   
 }
 
@@ -68,17 +114,17 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 20px;
-
+  font-size: 18px;
+  color: white;
   margin-top: 100px;
   margin-left: 480px;
   margin-right:250px;
   padding-top: 50px;
   padding-bottom:50px;
   font-family: 'Jim Nightshade', cursive;
-  box-shadow: 0 0 10px rgba(2, 2, 2, 0.3);
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.729);
   border-radius:50px;
-  background-color: #43434348;
+  background-color: #000000b2;
   padding:50px;
 }
 
@@ -125,7 +171,7 @@ a {
 .navbar-left a:hover {
   position: relative;
   background-color: #17171774;;
-  color: rgba(255, 196, 0, 0.87);
+  color: rgba(255, 196, 0, 0.965);
   border-radius: 80px 20px 80px 20px;
   box-shadow: 0 0 40px rgba(2, 2, 2, 0.667);
   padding: 15px;
@@ -300,3 +346,20 @@ a {
   align-items: center;
 }
 
+
+/* Different backgrounds for the home and lounge areas */
+.gryffindor {
+  background-color: red;
+}
+
+.hufflepuff {
+  background-color: rgb(255, 187, 0);
+}
+
+.ravenclaw {
+  background-color: blue;
+}
+
+.slytherin {
+  background-color: green;
+}
