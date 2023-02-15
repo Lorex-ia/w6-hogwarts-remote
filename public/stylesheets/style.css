@@ -1,12 +1,110 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Jim Nightshade', cursive;
+  margin:0;
+  margin-left: 150px;
 }
 
-a {
-  color: #00b7ff;
+
+li{
+  list-style-type: none;
+  margin-left: 15px;
+  margin-right:15px;
+}
+
+.intro{
+  display:flex;
+  justify-content: flex-start;
 }
 
 h1 {
-  color: 15px;
+ font-size: 30px;
 }
+
+.navbar-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: black;
+  color: #ffc400;
+}
+
+.navbar-logo {
+  height: 80px;
+  width:80px;
+  margin-right: 50px;
+
+}
+
+.navbar-title {
+  margin: 0;
+  font-size: 50px;
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+.navbar-left {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: black;
+}
+
+
+
+.content {
+  margin-top: 50px;
+  margin-left: 150px;
+  padding: 5px;
+  font-family: 'Jim Nightshade', cursive;
+}
+
+.navbar-left nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul{
+  margin-top:100px;
+}
+
+a {
+  margin-top: 50px;
+  color: #ffc400;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+ 
+}
+
+.navbar-left a {
+  color: #ffc400;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar-left a:hover {
+  background-color: #ffc400;
+  color: black;
+  /* padding:20px; */
+  text-align:center;
+}
+
+.navbar-left li:first-child a {
+  border-top: 1px solid #ffc400;
+  padding-top: 20px;
+}
+
+.navbar-left li:last-child a {
+  padding-bottom:20px;
+  border-bottom: 1px solid #ffc400;
+}
+
+.navbar-left li.active a {
+  background-color: #ffc400;
+  color: black;
+}
+

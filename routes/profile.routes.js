@@ -147,24 +147,6 @@ router.get('/spells-list/difficulty/:difficulty', async (req, res, next) => {
     }
 });
 
-// Route to show spells with difficulty level 1
-// router.get('/spells-list/difficulty/:levels', (req, res, next) => {
-//     console.log("getting here!")
-//     Spell.find({ difficulty: 1 }).populate('owner')
-//       .then(spells => {
-//         console.log('Diff 1', spells);
-//         res.render('profile/spells-list', {
-//           spells,
-//           user: req.session.user,
-//           layout: '../views/layouts/profile-layout.ejs'
-//         });
-//       })
-//       .catch(error => {
-//         console.log(error);
-//       });
-//   });
-
-
 
 
 
