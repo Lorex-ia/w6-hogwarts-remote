@@ -1,0 +1,29 @@
+/* // START LAYOUT STYLING */
+body {
+        font-family: 'Jim Nightshade', cursive;
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+.content {
+        margin-top: 50px;
+        margin-left: 150px;
+        padding: 5px;
+        font-family: 'Jim Nightshade', cursive;
+    }
+/* .intro{
+        display:flex;
+        justify-content: flex-start;
+    } */
+a {
+        margin-top: 50px;
+        color: #ffc400;
+        text-decoration: none;
+        font-size: 20px;
+        text-align: center;
+    
+    }
+/* /// ----------END OF       LAYOUT        STYLING --------- */
+
+h1 {
+    font-size: 30px;
+    }
