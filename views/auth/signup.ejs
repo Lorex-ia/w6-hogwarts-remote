@@ -1,4 +1,4 @@
-<h2>Sign up page</h2>
+<!-- <h2>Sign up page</h2> -->
 
 <!-- THIS SHOWS ONLY WHEN THE USER TRIED TO LOGIN WITHOUT MAKING AN ACCOUNT FIRST. THE ERROR MESSAGE SHOULD BE "User not found, you have to get the letter first". -->
 <div id="errorMessageFromLogin">
@@ -10,36 +10,44 @@
 </div>
 
 
-<!-- START OF LETTER -->
-<div>
-    <p>
-        We are glad to announce that Hogwarts is expanding its courses to online lectures. If you have come to this page it means that you have an invitation and that you are indeead.... A WIZARD!!!
-        The whole community is thrilled to have you signed up for the Remote course. 
-        You just have to chose an username and a password, and be sorted for the house. So firstly, complete the form below. 
-        Then afterwards go to experience the Sorting Hat Quiz!
-    </p>
+
+<div id="loginBody" >
+    <p id="letterText" > <!-- START OF LETTER -->
+        We are gladly announcing that Hogwarts is expanding the courses to the Online World.
+        <br><br>
+        If you have come to this page it means that you have received our letter with the invitation and... 
+        <br><br>
+        ...that you are indeed...
+        <br><br>
+        A WIZARD!
+        <br>
+        
+    </p> <!-- END OF LETTER-->
+
+
+
+            <!-- START OF TYPING FORM -->
+        <form method="POST" action="/auth/signup" id="loginForm" >
+
+            <label> 
+                <input class="loginInput" type="text" name="username" required 
+                placeholder="Name">
+            </label>
+
+            <label> 
+                <input type="password" name="password" required class="loginInput" placeholder="password" >
+            </label>
+
+            <button id="loginButton" type="submit">Get ready for Sorting</button>
+
+        </form>
+        <!-- END OF TYPING FORM -->
+
 </div>
 
 
-<!-- END OF LETTER-->
 
 
-
-<!-- START OF TYPING FORM -->
-<form method="POST" action="/auth/signup">
-
-    <label> Name: 
-        <input type="text" name="username" required >
-    </label>
-
-    <label> Password:
-        <input type="password" name="password" required >
-    </label>
-
-    <button type="submit">Proceed to the Sorting Hat Quiz!</button>
-
-</form>
-<!-- END OF TYPING FORM -->
 
 
 <!-- ERROR  -->

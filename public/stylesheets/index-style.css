@@ -152,13 +152,13 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 13vh;
+    /* height:  */
 
     cursor: url('../images/lumosCursor.png') 32 32, auto;
 }
 .loginInput {
-    width: 100%;
-    height: 100%;
+    /* width: 50%;
+    height: 50%; */
     border: #deb221 solid 1px;
     border-radius: 12px;
     padding: 7px;
@@ -273,12 +273,18 @@ a {
     height: 100%;
     z-index: -1;
 }
-
-
-
 /* /// ----------END OF       LOGIN        STYLING --------- */
 /*  ---------- START     SIGNUP        STYLING --------- */
-
-
-
+#letterText {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
 /* /// ----------END OF       SIGNUP        STYLING --------- */
