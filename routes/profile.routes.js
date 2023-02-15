@@ -20,7 +20,8 @@ const axios = require('axios');
 //             res.redirect("/auth/login");
 //     }
 // });
-//New route to update the backgrounds
+
+//New route to update the backgrounds depending on the house the user is in
 router.get("/", isLoggedIn, (req, res, next) => {
     const house = req.session.user.house;
     res.render("profile/profile-home", {
@@ -46,7 +47,7 @@ router.get("/profile-info", isLoggedIn, async (req, res, next) => {
       res.render("profile/profile-info", { 
         user: req.session.user,
         numSpells: numSpells,
-        // layout: "../views/layouts/profile-layout.ejs"
+        layout: "../views/layouts/profile-layout.ejs"
       });
     } catch (error) {
       console.log(error);

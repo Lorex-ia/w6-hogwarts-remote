@@ -3,10 +3,10 @@
 body {
   font-family: 'Jim Nightshade', cursive;
   margin:0;
-  /* background-image: url('/images/hog.png');
-  background-size: cover; */
+  background-image: url('/images/hog.png');
+  background-size: cover;
   
-  background-color:rgba(228, 224, 214, 0.9)
+  /* background-color:rgba(228, 224, 214, 0.9) */
 
 }
 
@@ -349,17 +349,33 @@ a {
 
 /* Different backgrounds for the home and lounge areas */
 .gryffindor {
-  background-color: red;
+  background-image: url('/images/gryff1.jpg');
+  background-size: 90%;
+  background-position: left 50px;
+  background-position-x: 200px;
+  background-position-y: 150px;
 }
 
 .hufflepuff {
-  background-color: rgb(255, 187, 0);
+  background-image: url('/images/huff1.jpg');
+  background-size: 90%;
+  background-position: left 50px;
+  background-position-x: 200px;
+  background-position-y: 150px;
 }
 
 .ravenclaw {
-  background-color: blue;
+  background-image: url('/images/raven1.jpg');
+  background-size: 90%;
+  background-position: left 50px;
+  background-position-x: 200px;
+  background-position-y: 150px;
 }
 
 .slytherin {
-  background-color: green;
+  background-image: url('/images/slyth1.jpg');
+  background-size: 90%;
+  background-position: left 50px;
+  background-position-x: 200px;
+  background-position-y: 150px;
 }
