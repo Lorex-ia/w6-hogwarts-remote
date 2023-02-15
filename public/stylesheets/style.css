@@ -10,3 +10,136 @@ a {
 h1 {
   color: 15px;
 }
+
+/* -------------------- SYLLABUS styling -------------- */
+#syllabusBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+
+
+
+/* ------------------ END OF SYLLABUS styling -------------- */
+
+
+
+/* -------------- characters ALUMNI styling -------------- */
+#charactersByHouse {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+}
+#charactersByHouse img{
+  width: 140px;
+  height: 180px;
+  object-fit:contain ;
+}
+
+/* characters alumni BY  -- HOUSE ---->>>>>> GRYYFINDOR <<<<<--- styling */
+#charactersGryffindor{
+  border-width: 10px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom,#740001 ,#EEBA30) 1;
+
+  height: 800px;
+  overflow: scroll;
+}
+#charactersGryffindor::-webkit-scrollbar {
+  width: 1em;
+}
+#charactersGryffindor::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+#charactersGryffindor::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+#charactersGryffindor div{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* characters alumni BY  -- HOUSE ---->>>>>> RAVENCLAW <<<<<---  styling */
+#charactersRavenclaw{
+  border-width: 10px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, #0E1A40 ,  #946B2D ) 1;
+  
+  height: 800px;
+  overflow: scroll;
+}
+#charactersRavenclaw::-webkit-scrollbar {
+  width: 1em;
+}
+#charactersRavenclaw::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+#charactersRavenclaw::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+#charactersRavenclaw div{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* characters alumni BY  -- HOUSE ---->>>>>> HUFFLEPUFF <<<<<---  styling */
+#charactersHufflepuff{
+  border-width: 10px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, #FFF4B1 , #60605C ) 1;
+  
+  height: 800px;
+  overflow: scroll;
+}
+#charactersHufflepuff::-webkit-scrollbar {
+  width: 1em;
+}
+#charactersHufflepuff::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+#charactersHufflepuff::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+#charactersHufflepuff div{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* characters alumni BY  -- HOUSE ---->>>>>> SLYTHERIN <<<<<---  styling */
+#charactersSlytherin{
+  border-width: 10px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, #1A472A  , #AAAAAA ) 1;
+  
+  height: 800px;
+  overflow: scroll;
+}
+#charactersSlytherin::-webkit-scrollbar {
+  width: 1em;
+}
+#charactersSlytherin::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+#charactersSlytherin::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+#charactersSlytherin div{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

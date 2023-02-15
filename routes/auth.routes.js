@@ -19,7 +19,13 @@ router.post('/signup', isLoggedOut, async (req, res) => {
         res.render('auth/signup', { errorMessage: 
             "Password must be at least 6 characters long", body: req.body });
     }
-    else {
+    else if (body.username.charAt(0) ===  body.username.charAt(0).toLowerCase()) {
+        res.render('auth/signup', {
+            errorMessage:  "Name must start with a capital letter", 
+            body: req.body });
+    }
+    else
+    {
         const salt = await bcrypt.genSalt(13);
         const passwordHash = bcrypt.hashSync(body.password, salt);
 
@@ -27,9 +33,10 @@ router.post('/signup', isLoggedOut, async (req, res) => {
         body.passwordHash = passwordHash;
 
         console.log(body);
-
+    //1st version API call for wands - it was working
         // API call to get wands with AXIOS
-        let wands = await axios.get("https://legacy--api.herokuapp.com/api/v1/wands");
+        let wands = await axios.get("https://legacy--api.herokuapp.com/api/v1/wands"); 
+
 
         //get a random wand from the data
         const randomWand = wands.data[Math.floor(Math.random() * wands.data.length)];
@@ -68,7 +75,6 @@ router.post('/signup', isLoggedOut, async (req, res) => {
 });
 
 
-
 router.get('/signup-profile', isLoggedIn, (req, res) => {
     res.render('auth/signup-profile', { user: req.session.user });
 
@@ -90,8 +96,6 @@ router.post('/login', isLoggedOut, async (req, res) => {
     const body = {...req.body};
 
     const userMatch = await User.find({username: body.username}); // find -> array
-    console.log(userMatch);
-    console.log("it s a match")
 
     if (userMatch.length) {   // find has an element (match)
         // user found
@@ -112,11 +116,12 @@ router.post('/login', isLoggedOut, async (req, res) => {
             });
         }
     } else { 
-        // user not found
-        console.log("user not found");
-        res.render('auth/login', { 
-            errorMessage: "User not found", 
-            userData: req.body,
+        // user not found - i ve updated because it didnt work properly
+        console.log("user not found, should go now to signup page but on that page now it should also display the error message written below");
+
+        res.render('auth/signup', { 
+            errorMessageFromLogin: "User not found, you have to get the account for Hogwarts first", 
+            user: undefined,
         });
 
     }

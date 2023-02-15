@@ -2,6 +2,11 @@
 <h2> Welcome to the sorting hat's quizz </h2>
 <p>To what House do you belong to? </p>
 
+<!-- Display error message -- if there is any question left answered  -->
+<% if (typeof errorMessage != "undefined") { %>
+    <p> <%= errorMessage %> </p>
+<% } %>
+
 <form method="POST" action="/hatquiz">
     <fieldset> 
         <!-- makes the field - legend is the question -->

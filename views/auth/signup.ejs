@@ -1,5 +1,15 @@
 <h2>Sign up page</h2>
 
+<!-- THIS SHOWS ONLY WHEN THE USER TRIED TO LOGIN WITHOUT MAKING AN ACCOUNT FIRST. THE ERROR MESSAGE SHOULD BE "User not found, you have to get the letter first". -->
+<div id="errorMessageFromLogin">
+    <% if (typeof errorMessageFromLogin != "undefined") { %>
+        <p>
+            <%= errorMessageFromLogin %>
+        </p>
+        <% } %>
+</div>
+
+
 <!-- START OF LETTER -->
 <div>
     <p>
@@ -18,7 +28,7 @@
 <!-- START OF TYPING FORM -->
 <form method="POST" action="/auth/signup">
 
-    <label> Username: 
+    <label> Name: 
         <input type="text" name="username" required >
     </label>
 

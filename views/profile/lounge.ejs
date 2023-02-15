@@ -4,4 +4,54 @@
         </p> 
 </div>
 
-<p> Welcome to Lounge, <%= user.username %> </p>
+<!-- IM SORRY IN ADVANCE IF IT'S TOO CRINGE MUHAHAHA -->
+
+<div>
+    <h2> Welcome to House Lounges, <%= user.username %> </h2>
+
+    <p>  
+        Us here, at Remote Hogwarts School, we value your time. 
+        <br>
+        Your time means Fun Time.. so what does it rhyme with? 
+        <br>
+        <br>
+        Yep. You've guessed it. LOUNGE TIME!
+        <br>
+        <br>
+        So.. we updated that boring name (Common Room.. so sad.. so dull) to... House LOUNGE (better, right??). 
+        <br>
+        <br>
+        And besides that, -- 
+        <br>
+        -------- "Why are they called Common rooms when only people from a certain house can go into them? 
+        <br>
+        ------------------ Doesn't that make them uncommon rooms?". Badumtssssssss
+        <br>
+        <br>
+        So, I believe your time has come to explore some fun stuff within your House Community.
+        <br>
+        All you have to do is type in the House Password below. 
+        <br>
+        <br>
+        If you don't remember it you can always go back to <a style="white-space: nowrap;" href="/profile/profile-info">your Hogwarts Profile</a>, check the House Password and come back here. (you can just copy paste from there into the form)
+        <br>
+        <br>
+        Have Fun.. 
+        <br>
+        ----> Fun time, Lounge Time below...
+
+    </p>
+    
+    <form method="POST" action="/profile/lounge">
+        <label> Your House Password here:
+            <input type="text" name="typedHousePassword" required >
+        </label>
+    
+        <button type="submit">Me wants that Lounge Time!!!</button>
+    </form>
+
+</div>
+
+<% if (typeof errorMessage != "undefined") { %>
+    <p> <%= errorMessage %> </p>
+<% } %>

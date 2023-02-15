@@ -1,10 +1,33 @@
-<h1> Your Hogwarts Remote Student profile</h1>
 
-    <div>
-        <p>Welcome, <%= user.username %> </p>
-        <p>House of <%= user.house %> </p>
-        <p>Your assigned wand is: <%= user.wand %></p>
-        <p>You have created <%= numSpells %> spells</p>
-        <p>Enjoy Hogwarts!</p>
-      </div>
-      
+    <p>Your Hogwarts Remote Name: <%= user.username %> </p>
+
+    <p>  <% 
+        if (user.house) { %> 
+            House of <%= user.house %> </p>
+            <% } 
+        %>
+    <p>
+
+    <p>You have created <%= numSpells %> spells</p>
+
+    <p> House Password:
+
+        <% if (user.house === "Gryffindor") { %>
+            " Knock, knock! Who's there? Dumb! Dumb who? Dumb-door's password "
+        <% } else if (user.house === "Ravenclaw") { %>
+            " The Last Horcrux is my ex "
+        <% } else if (user.house === "Hufflepuff") { %>
+            " If you're not in Hufflepuff, you're a huff-n-puff "
+        <% } else if (user.house === "Slytherin") { %>
+            " Slytherin to your terminal like a boss "
+        <% } %>
+
+        for -->
+
+        <a style="white-space: nowrap;" href="/profile/lounge"> House Lounge </a>
+    </p>
+
+    <p>Your assigned Wand is: <%= user.wand %></p>
+
+    <p>Enjoy Hogwarts!</p>
+</div>
