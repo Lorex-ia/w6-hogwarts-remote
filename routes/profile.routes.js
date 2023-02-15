@@ -23,10 +23,56 @@ router.get("/profile-info", isLoggedIn, (req, res, next) => {
         layout: "../views/layouts/profile-layout.ejs" });
 });
 
+// ROUTES FOR HOUSE LOUNGE -- WHOOP WHOOP PARTEEEY
+//FIRST FOR GET
 router.get("/lounge", isLoggedIn, (req, res, next) => {
-    res.render("profile/lounge", { user: req.session.user, layout: "../views/layouts/profile-layout.ejs" })
+    console.log("made it to the lounge get");
+
+    res.render("profile/lounge", { 
+        user: req.session.user, 
+        layout: "../views/layouts/profile-layout.ejs" })
+});
+//SECOND FOR POST
+router.post("/lounge", isLoggedIn, (req, res, next) => {
+    console.log("made it to the lounge post, this is the req body:");
+    console.log(req.body);
+
+    let typedPassword = {...req.body};
+    console.log(typedPassword);
+
+    switch (typedPassword) {
+        // 1st case: doesnt type anything
+        case "undefined": 
+                res.render("profile/lounge", { 
+                    errorMessage: "Please enter your password",
+                    user: req.session.user, 
+                    layout: "../views/layouts/profile-layout.ejs" })
+                break;
+        // 2nd case: password is empty
+        case "": 
+                res.render("profile/lounge", { 
+                    errorMessage: "Please enter your password",
+                    user: req.session.user, 
+                    layout: "../views/layouts/profile-layout.ejs" })
+                break;
+        // 3rd case: password is Gryffindor
+        
+        // 4th case: password is Hufflepuff
+
+        // 5h case: password is Ravenclaw
+
+                }
+
+        
+
+
+
+    // res.render("profile/lounge", { 
+    //     user: req.session.user, 
+    //     layout: "../views/layouts/profile-layout.ejs" })
 });
 
+//  ROUTER FOR LOGOUT
 router.get('/logout', isLoggedIn, (req, res) => {
     req.session.destroy(err => {
         if (err) next(err)
