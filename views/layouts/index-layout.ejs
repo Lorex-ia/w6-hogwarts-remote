@@ -10,14 +10,16 @@
 
   <body>
 
-    <!-- i added this part below: -----user.house !== undefined---- so that the user cannot click on profile or logout without going through the sorting quiz // everyone needs a house! :D  -->
+    <!-- i added this part below: -----user.house !== undefined---- so that the user cannot click on profile or logout without going through the sorting quiz // everyone needs a house! :D  --> 
 
+    <div id="indexLayoutNav">
     <% 
         if (user && user.house !== undefined) { %> 
         <li><a href="/my-profile">Profile</a></li>
         <li><a href="/logout">Logout</a></li>
         <% } 
     %>
+    </div>
 
     <%- body %>
 

@@ -19,20 +19,24 @@ router.post('/signup', isLoggedOut, async (req, res) => {
         res.render('auth/signup', { errorMessage: 
             "Password must be at least 6 characters long", body: req.body });
     }
-    else {
+    else if (body.username.charAt(0) ===  body.username.charAt(0).toLowerCase()) {
+        res.render('auth/signup', {
+            errorMessage:  "Name must start with a capital letter", 
+            body: req.body });
+    }
+    else
+    {
         const salt = await bcrypt.genSalt(13);
         const passwordHash = bcrypt.hashSync(body.password, salt);
 
         delete body.password;
         body.passwordHash = passwordHash;
-        
-        // did the first letter of username to uppercase
-        body.username = body.username.charAt(0).toUpperCase() + body.username.slice(1);
 
         console.log(body);
-
+    //1st version API call for wands - it was working
         // API call to get wands with AXIOS
-        let wands = await axios.get("https://legacy--api.herokuapp.com/api/v1/wands");
+        let wands = await axios.get("https://legacy--api.herokuapp.com/api/v1/wands"); 
+
 
         //get a random wand from the data
         const randomWand = wands.data[Math.floor(Math.random() * wands.data.length)];
@@ -116,7 +120,7 @@ router.post('/login', isLoggedOut, async (req, res) => {
         console.log("user not found, should go now to signup page but on that page now it should also display the error message written below");
 
         res.render('auth/signup', { 
-            errorMessageFromLogin: "User not found, you have to get the letter first", 
+            errorMessageFromLogin: "User not found, you have to get the account for Hogwarts first", 
             user: undefined,
         });
 

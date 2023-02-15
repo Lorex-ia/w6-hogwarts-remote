@@ -119,9 +119,10 @@ router.post('/', isLoggedIn, async (req, res) => {
 //Diana:
     //if checkIfAllAnswersAreFilled == false, render the hatquizz page again with the error message
         if (checkIfAllAnswersAreFilled == false) {
+            req.session.user.house = undefined;
             res.render('hatquiz/hatquizz', { 
-                errorMessage: "!!!!!!Please answer all the questions!!!!",
-                user: req.session.user, 
+                errorMessage: "!Please answer all the questions!",
+                user: req.session.user,
             })
         }
         else { // render..

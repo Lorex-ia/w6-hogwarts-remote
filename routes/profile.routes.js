@@ -30,7 +30,7 @@ router.get("/syllabus", isLoggedIn, (req, res, next) => {
         layout: "../views/layouts/profile-layout.ejs" });
 });
 
-// ROUTES FOR     HOUSE LOUNGE    -- WHOOP WHOOP PARTEEEY
+// ROUTES FOR     HOUSE LOUNGE    -- WHOOP WHOOP PARTEEEY :
 
 //FIRST FOR       GET      LOUNGE
 router.get("/lounge", isLoggedIn, (req, res, next) => {
@@ -130,6 +130,7 @@ router.post("/lounge", isLoggedIn, (req, res, next) => {
 });
 
 // - profile/lounges/  -- I DID ANOTHER FOLDER FOR    EACH HOUSE LOUNGE    (gryff huff rave slyth)
+
 // routes for every house lounge (Gryffindor, Hufflepuff, Ravenclaw, Slytherin) 
 router.get("/lounges/gryff", isLoggedIn, (req, res, next) => {
     res.render("profile/lounges/gryff-lounge", { 
