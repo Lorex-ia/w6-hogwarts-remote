@@ -7,42 +7,44 @@
         <title><%= appTitle %></title>
         <link rel="stylesheet" href="/stylesheets/style.css" />
     </head>
-
     <body>
-        <div>
+        <div class="navbar-top">
+          <img src="/images/hog2.png" alt="Hogwarts Logo" class="navbar-logo">
+          <h1 class="navbar-title">Hogwarts Remote</h1>
+        </div>
+         <div class="navbar-left">
             <nav>
                 <ul>
                     <li>
-                        <a href="/profile">Home</a>
+                    <a href="/profile">Home</a>
                     </li>
                     <li>
-                        <a href="/profile/profile-info">My Hogwarts Remote Profile</a>
+                    <a href="/profile/profile-info">My Hogwarts Profile</a>
                     </li>
                     <li>
-                        <a href="/profile/lounge">House Lounge</a>
+                    <a href="/profile/lounge">House Lounge</a>
                     </li>
                     <li>
-                        <a href="/profile/syllabus">Syllabus</a>
+                    <a href="/profile/syllabus">Syllabus</a>
                     </li>
-
                     <li>
-                        <a href="/profile/house-characters">Alumni</a>
+                    <a href="/profile/house-characters">Alumni</a>
                     </li>
-
                     <li>
-                        <a href="/profile/user-spells">My spells</a>
-                    </li>
-
-                    <li>
-                        <a href="logout">Logout</a>
-                    </li>
-                    
-                </ul>
-            </nav>
+                    <a href="/profile/user-spells">My spells</a>
+                </li>
+                <li>
+                    <a href="logout">Logout</a>
+                </li>
+            </ul>
+          </nav>
         </div>
-
-        <%- body %>
-
-        <script src="/js/profile-script.js"></script>
-    </body>
-    </html>
+        <div class="content">
+          <%- body %>
+        </div>
+        <script src="/js/script.js"></script>
+      </body>
+      </html>
+      
+      
+      

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><%= appTitle %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+
   </head>
 
   <body>
@@ -14,9 +15,13 @@
 
     <div id="indexLayoutNav">
     <% 
-        if (user && user.house !== undefined) { %> 
+        if (user && user.house !== undefined) { %>  
+    <nav>
+      <div class="intro">
         <li><a href="/my-profile">Profile</a></li>
         <li><a href="/logout">Logout</a></li>
+      </div>
+    </nav>
         <% } 
     %>
     </div>
