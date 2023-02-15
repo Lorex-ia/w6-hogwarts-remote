@@ -3,12 +3,26 @@
      
     <h2>Spells list</h2>
 
+    <!-- Form so the user can filter his search -->
+    <form action="/profile/spells-list/" method="GET">
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty" name="difficulty">
+          <option value="">All</option>
+          <option value="1">1 (Easy)</option>
+          <option value="2">2 (Medium) </option>
+          <option value="3">3 (Hard)</option>
+        </select>
+        <button type="submit">Filter</button>
+      </form>
+      
+
 
 <% spells.forEach((spell) => { %>
 
     <div style="border: 1px solid black; margin:1rem; padding:1rem" >
-      <h3><%= spell.spellname %></h3>
+      <h2><%= spell.spellname %></h2>
       <h4>Description: <%= spell.description %></h4>
+      <h4>Difficulty: <%= spell.difficulty %></h4>
       <p>by <%= spell.owner.username %> </p>
     </div>
   

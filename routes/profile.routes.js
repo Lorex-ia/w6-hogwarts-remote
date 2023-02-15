@@ -100,8 +100,26 @@ router.post("/spells-creator", isLoggedIn, async (req, res) => {
 
 // READ ROUTES:
 //GET route to see the list of ALL spells:
+// router.get('/spells-list', (req, res, next) => {
+//     Spell.find({}).populate('owner')
+//       .then(allSpells => { console.log('Retrieved spells from DB:', allSpells); res.render("profile/spells-list", { 
+//                  spells: allSpells,
+//                  user: req.session.user,
+//                  layout: "../views/layouts/profile-layout.ejs" });
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       });
+//   });
+
+// Route that allows the filtering:
 router.get('/spells-list', (req, res, next) => {
-    Spell.find({}).populate('owner')
+    const difficulty = req.query.difficulty;
+    let query = {};
+    if (difficulty) {
+      query.difficulty = difficulty;
+    }
+    Spell.find(query).populate('owner')
       .then(allSpells => { console.log('Retrieved spells from DB:', allSpells); res.render("profile/spells-list", { 
                  spells: allSpells,
                  user: req.session.user,
@@ -110,7 +128,45 @@ router.get('/spells-list', (req, res, next) => {
       .catch(error => {
         console.log(error);
       });
-  });
+});
+
+
+router.get('/spells-list/difficulty/:difficulty', async (req, res, next) => {
+    const difficulty = req.params.difficulty;
+    console.log(difficulty);
+    try {
+        const spells = await Spell.find({ difficulty: difficulty }).populate('owner');
+        console.log(`Retrieved spells with difficulty level ${difficulty} from DB:`, spells);
+        res.render('profile/spells-list', {
+            spells,
+            user: req.session.user,
+            layout: '../views/layouts/profile-layout.ejs'
+        });
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+// Route to show spells with difficulty level 1
+// router.get('/spells-list/difficulty/:levels', (req, res, next) => {
+//     console.log("getting here!")
+//     Spell.find({ difficulty: 1 }).populate('owner')
+//       .then(spells => {
+//         console.log('Diff 1', spells);
+//         res.render('profile/spells-list', {
+//           spells,
+//           user: req.session.user,
+//           layout: '../views/layouts/profile-layout.ejs'
+//         });
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       });
+//   });
+
+
+
+
 
 
 // GET route to see only the details of a specific spell
@@ -128,9 +184,11 @@ router.get('/spells-list/:spellId/update', async (req, res) => {
     const spell = await Spell.findById(req.params.spellId)
     console.log(req.session.user)
     res.render('profile/spells-edit', { spell, update: true, user: req.session.user })
-  })
+  });
 
   
+
+
   // POST '/spells/:id/edit' route to edit the spell
   router.post('/spells-list/:spellId/update', async (req, res) => {
     console.log("We're in the post")
@@ -142,9 +200,11 @@ router.get('/spells-list/:spellId/update', async (req, res) => {
     } catch(err){
         console.log(err)
     }
-  
-   
   })
+
+
+
+
 
 
 

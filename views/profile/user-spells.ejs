@@ -1,5 +1,7 @@
 <h1> These are my spells</h1>
 
+
+
 <ul>
     <% if (spells.length === 0) { %>
       <p>You don't have any spells yet. Create one to have access to Hogwart's historical secret spell list!</p>
@@ -14,12 +16,17 @@
           </div>
         <% } %>
       <% }); %>
+      <button>
+        <a href="/profile/spells-list"> Ancestral spell list</a>
+     </button>
     <% } %>
   </ul>
 
 
-<button>
+
+  <button>
     <a href="/profile/spells-creator"> Create a new spell</a>
  </button>
+
 
 
