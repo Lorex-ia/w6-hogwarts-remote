@@ -23,8 +23,9 @@ router.get("/profile-info", isLoggedIn, (req, res, next) => {
         layout: "../views/layouts/profile-layout.ejs" });
 });
 
-// ROUTES FOR HOUSE LOUNGE -- WHOOP WHOOP PARTEEEY
-//FIRST FOR GET
+// ROUTES FOR     HOUSE LOUNGE    -- WHOOP WHOOP PARTEEEY
+
+//FIRST FOR       GET      LOUNGE
 router.get("/lounge", isLoggedIn, (req, res, next) => {
     console.log("made it to the lounge get");
 
@@ -32,15 +33,21 @@ router.get("/lounge", isLoggedIn, (req, res, next) => {
         user: req.session.user, 
         layout: "../views/layouts/profile-layout.ejs" })
 });
-//SECOND FOR POST
+
+//SECOND FOR      POST      LOUNGE
 router.post("/lounge", isLoggedIn, (req, res, next) => {
     console.log("made it to the lounge post, this is the req body:");
     console.log(req.body);
+    let body = req.body;
 
-    let typedPassword = {...req.body};
+    let typedPassword = body.typedHousePassword;
     console.log(typedPassword);
+    
+    let userHouse = req.session.user.house;
+    console.log("user house is " + userHouse);
 
-    switch (typedPassword) {
+    // START OF    SWITCH     CASE //
+    switch(typedPassword) {
         // 1st case: doesnt type anything
         case "undefined": 
                 res.render("profile/lounge", { 
@@ -56,23 +63,92 @@ router.post("/lounge", isLoggedIn, (req, res, next) => {
                     layout: "../views/layouts/profile-layout.ejs" })
                 break;
         // 3rd case: password is Gryffindor
-        
-        // 4th case: password is Hufflepuff
+        case "Knock, knock! Who's there? Dumb! Dumb who? Dumb-door's password": 
+                if  (userHouse === "Gryffindor") {
+                    console.log("made it to the matching passwords and houses case");
 
-        // 5h case: password is Ravenclaw
-
+                    res.render("profile/lounges/gryff-lounge", { 
+                        user: req.session.user,
+                        layout: "../views/layouts/profile-layout.ejs" })
+                } else {
+                    res.render("profile/lounge", { 
+                        errorMessage: "You sneaky little wizard, try to enter YOUR own House Lounge",
+                        user: req.session.user, 
+                        layout: "../views/layouts/profile-layout.ejs" })
                 }
+                break;
+        // 4th case: password is Hufflepuff
+        case "If you're not in Hufflepuff, you're a huff-n-puff": 
+                if  (userHouse === "Hufflepuff") {
+                        res.render("profile/lounges/huff-lounge", { 
+                            user: req.session.user,
+                            layout: "../views/layouts/profile-layout.ejs" })
 
+                } else {            
+                    res.render("profile/lounge", { 
+                        errorMessage: "You sneaky little wizard, try to enter YOUR own House Lounge",
+                        user: req.session.user, 
+                        layout: "../views/layouts/profile-layout.ejs" })
+                }
+                break;
+        // 5h case: password is Ravenclaw
+        case "The Last Horcrux is my ex": 
+                if  (userHouse === "Ravenclaw") {
+                    res.render("profile/lounges/rave-lounge", { 
+                        user: req.session.user, 
+                        layout: "../views/layouts/profile-layout.ejs" })
+                } else {
+                    res.render("profile/lounge", { 
+                        errorMessage: "You sneaky little wizard, try to enter YOUR own House Lounge",
+                        user: req.session.user, 
+                        layout: "../views/layouts/profile-layout.ejs" })
+                }
+                break;
+        // 6th case: password is Slytherin
+        case "Slytherin to your terminal like a boss":
+                if  (userHouse === "Slytherin") {
+                    res.render("profile/lounges/slyth-lounge", { 
+                        user: req.session.user, 
+                        layout: "../views/layouts/profile-layout.ejs" })
+                } else {
+                    res.render("profile/lounge", { 
+                        errorMessage: "You sneaky little wizard, try to enter YOUR own House Lounge and don't you snitch on this house password",
+                        user: req.session.user, 
+                        layout: "../views/layouts/profile-layout.ejs" })
+                }
+                break;
         
-
-
-
-    // res.render("profile/lounge", { 
-    //     user: req.session.user, 
-    //     layout: "../views/layouts/profile-layout.ejs" })
+    }
+    // END OF     SWTICH     CASE // 
 });
 
-//  ROUTER FOR LOGOUT
+// - profile/lounges/  -- I DID ANOTHER FOLDER FOR    EACH HOUSE LOUNGE    (gryff huff rave slyth)
+// routes for every house lounge (Gryffindor, Hufflepuff, Ravenclaw, Slytherin) 
+router.get("/lounges/gryff", isLoggedIn, (req, res, next) => {
+    res.render("profile/lounges/gryff-lounge", { 
+        user: req.session.user, 
+        layout: "../views/layouts/profile-layout.ejs" })
+});
+
+router.get("/lounges/huff", isLoggedIn, (req, res, next) => {
+    res.render("profile/lounges/huff-lounge", { 
+        user: req.session.user, 
+        layout: "../views/layouts/profile-layout.ejs" })
+});
+
+router.get("/lounges/rave", isLoggedIn, (req, res, next) => {
+    res.render("profile/lounges/rave-lounge", { 
+        user: req.session.user, 
+        layout: "../views/layouts/profile-layout.ejs" })
+});
+
+router.get("/lounges/slyth", isLoggedIn, (req, res) => {
+    res.render("profile/lounges/slyth-lounge", { 
+        user: req.session.user, 
+        layout: "../views/layouts/profile-layout.ejs" })
+});
+
+//  ROUTER FOR      LOGOUT
 router.get('/logout', isLoggedIn, (req, res) => {
     req.session.destroy(err => {
         if (err) next(err)
@@ -80,7 +156,7 @@ router.get('/logout', isLoggedIn, (req, res) => {
     })
 })
 
-//route for characters page
+//route for    CHARACTERS    page
 router.get("/house-characters", isLoggedIn, (req, res, next) => {
     fetch(`https://hp-api.onrender.com/api/characters`)
     .then(response => response.json())
@@ -93,7 +169,7 @@ router.get("/house-characters", isLoggedIn, (req, res, next) => {
     .catch( (err) => console.log(err) )
 });
 
-//route for characters details page
+//route for    CHARACTERS    DETAILS page
 router.get("/house-characters/:id", isLoggedIn, async (req, res, next) => {
     let characters = await axios.get(`https://hp-api.onrender.com/api/characters  `);
 
