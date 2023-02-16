@@ -7,7 +7,13 @@ body {
   background-size: cover;
   cursor: url('../images/lumosCursor.png') 32 32, auto;
   
+
+  /* color: hsl(60, 63%, 72%);
+  text-shadow: 0 0 5px #660707, 0 0 10px hsl(20, 100%, 50%); */
   
+
+  color: hsl(51, 100%, 58%);
+  text-shadow: 0 0 1px #f7d40b, 0 0 2px #f7d40b, 0 0 8px #f7d40b, 0 0 20px #f7d40be4;
   /* background-color:rgba(228, 224, 214, 0.9) */
 
 }
@@ -215,7 +221,27 @@ a {
 /* /// END OF LAYOUT STYLING */
 
 
+/* Home page  */
 
+.hometxt{
+  font-size: 40px;;
+}
+
+
+
+.desctext{
+  text-align: center;
+font-size:30px;
+}
+
+/* End of home page */
+
+
+/* Profile page */
+span{
+  color:rgb(255, 119, 0);
+  font-size: 30px;;
+}
 
 
 /* -------------------- SYLLABUS styling -------------- */

@@ -1,8 +1,37 @@
 <!-- This ensures the background image changes depending on the house the user is in -->
 <body class="<%= user.house.toLowerCase() %>">
+    <% if (user.house === "Gryffindor") { %>
+      <p class="hometxt"> Welcome to Gryffindor, <%= user.username %>! <br> </p>
+      <p class="desctext">During your time at Hogwarts, your house members will become your new family, and as such, we expect each and every one of you to uphold the values and traditions of your house with honor and pride. 
+        <br>
+        <br>For those of you in Gryffindor, courage and bravery are the cornerstones of your house. You are expected to stand up for what is right, even in the face of danger. You should be willing to take risks and face your fears with unwavering determination. 
+        <br><br>Remember that the true measure of a Gryffindor is not whether they succeed, but how they handle their failures. </p>
 
-    <p> Welcome home, <%= user.username %>, from house <%= user.house %> </p>
+    <% } else if (user.house === "Hufflepuff") { %>
+      <p class="hometxt"> Welcome to Hufflepuff, <%= user.username %>! </p>
+      <p class="desctext">During your time at Hogwarts, your house members will become your new family, and as such, we expect each and every one of you to uphold the values and traditions of your house with honor and pride. 
+        <br>
+        <br>Hufflepuff students, your loyalty and dedication to hard work are the defining traits of your house. You are expected to support and encourage your fellow housemates, always striving to help others and foster a sense of community within your house. 
+        <br><br>Remember that true success comes not only from personal achievements, but also from the achievements of those around you. </p>
+
+    <% } else if (user.house === "Ravenclaw") { %>
+      <p class="hometxt"> Welcome to Ravenclaw, <%= user.username %>! </p>
+      <p class="desctext">During your time at Hogwarts, your house members will become your new family, and as such, we expect each and every one of you to uphold the values and traditions of your house with honor and pride. 
+        <br>
+        <br>Ravenclaw students, your intelligence and thirst for knowledge are the driving forces behind your house. You are expected to pursue your studies with a passion, always seeking to expand your understanding of the world around you. 
+        <br><br>Remember that knowledge is power, and that with great power comes great responsibility. </p>
+
+    <% } else if (user.house === "Slytherin") { %>
+      <p class="hometxt"> Welcome to Slytherin, <%= user.username %>!</p>
+        <p class="desctext">During your time at Hogwarts, your house members will become your new family, and as such, we expect each and every one of you to uphold the values and traditions of your house with honor and pride. 
+            <br>
+            <br>For Slytherin students, your cunning and ambition are the hallmarks of your house. You are expected to use your talents to achieve your goals, but never at the expense of others. 
+            <br><br>Remember that true success is achieved through hard work and determination, not through deceit and manipulation. </p>
+    <% } %>
   </body>
+
+
+
 
 
   <!-- Code for the music  -->

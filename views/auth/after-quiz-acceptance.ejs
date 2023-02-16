@@ -5,37 +5,27 @@
 <div id="acceptancePage" >
     <div id="acceptanceBigText" >
             <p id="acceptanceSmallText"  >
-                Welcome, <span><%= user.username %></span>, 
+               Dear, <span><%= user.username %></span>, 
                 <br>
-                We are pleased to inform you that you have been oficially accepted to Hogwarts Remote School of Witchcraft & Wizardry.
+                We are pleased to inform you that you have been oficially accepted to our prestigious Hogwarts Remote School of Witchcraft & Wizardry.
                 <br>
-                You have been sorted into the following house: 
-            </p>
-
-            <p id="acceptanceSmallText"   >
-                <span>
-                    <%= user.house %>.
-                </span>
+                You also have been sorted into the following house: <span> <%= user.house %> </span>.
             </p>
 
             <p id="acceptanceSmallText"  >
-                I think you already know Mr. Ollivander, he already sent you a 
-                welcoming gift and he left a message that says:<br>
+                It seems you have already met Mr. Ollivander as he already sent you a 
+                welcoming gift with his signature message:<br>
                     "The wand chooses the Wizard, <span><%= user.username %></span>!
-                        It's not always clear why. 
-                            But I think it is clear that we can expect great things from you."
+                        It is not always clear why, but I think it is clear that we can expect great things from you."
             </p>
                 
-            <p  id="acceptanceSmallText"  >
-                So let's see what you got!
-            </p>
                 
             <p  id="acceptanceSmallText"  >
-                Aaa, 
+                Oh, 
                 <span>
                 <%= user.wand %>
                 </span>
-                ! Perfect! Make sure you will use it to the fullest!
+                ! Awesome, make sure you use it to the fullest!
                 
             </p>
 
@@ -45,7 +35,7 @@
 
 
     <a href="/profile">
-        <button id="loginButton" >
+        <button class="loginButton" >
             Enter Hogwarts Remote
         </button>
     </a>

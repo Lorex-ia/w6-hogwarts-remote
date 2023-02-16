@@ -24,7 +24,7 @@
     <form method="POST" action="/hatquiz" id="hatquizForm">
         <fieldset> 
             <!-- makes the field - legend is the question -->
-            <legend>You and two friends need to cross a bridge guarded by a river troll who insists on fighting one of you before he will let all of you pass. Do you:</legend>
+            <legend class="legend">You and two friends need to cross a bridge guarded by a river troll who insists on fighting one of you before he will let all of you pass. Do you:</legend>
             <input type="radio" id="eagle" name="animal" value="ravenclaw">
                 <label for="eagle">Attempt to confuse the troll into letting all three of you pass without fighting?</label> <br>
             <input type="radio" id="lion" name="animal" value="gryffindor">
@@ -36,7 +36,7 @@
         </fieldset>
 
         <fieldset>
-            <legend>You enter an enchanted garden. What would you be most curious to examine first?</legend>
+            <legend class="legend">You enter an enchanted garden. What would you be most curious to examine first?</legend>
             <input type="radio" id="lion" name="garden" value="gryffindor">
                 <label for="lion">The bubbling pool, in the depths of which something luminous is swirling</label> <br>
             <input type="radio" id="badger" name="garden" value="hufflepuff">
@@ -48,7 +48,7 @@
         </fieldset>
 
         <fieldset>
-            <legend>After you have died, what would you like people to do when they hear your name?</legend>
+            <legend class="legend">After you have died, what would you like people to do when they hear your name?</legend>
             <input type="radio" id="lion" name="death" value="gryffindor">
                 <label for="lion">Ask for more stories about your adventures</label> <br>
             <input type="radio" id="badger" name="death" value="hufflepuff">
@@ -62,7 +62,7 @@
     <!-- From there if needed I’ll need to update all the ’id’s and the ‘for’ -->
 
         <fieldset>
-            <legend>Which road tempts you most?</legend>
+            <legend class="legend">Which road tempts you most?</legend>
             <input type="radio" id="eagle" name="road" value="ravenclaw">
                 <label for="eagle">The cobbled street lined with ancient buildings</label> <br>
             <input type="radio" id="lion" name="road" value="gryffindor">
@@ -75,7 +75,7 @@
 
 
         <fieldset>
-            <legend>Late at night, walking alone down the street, you hear a peculiar cry that you believe to have a magical source. Do you:</legend>
+            <legend class="legend">Late at night, walking alone down the street, you hear a peculiar cry that you believe to have a magical source. Do you:</legend>
             <input type="radio" id="lion" name="night" value="gryffindor">
                 <label for="lion">Draw your wand and try to discover the source of the noise?</label><br>
             <input type="radio" id="badger" name="night" value="hufflepuff">
@@ -86,8 +86,9 @@
                 <label for="eagle">Draw your wand and stand your ground?</label>
         </fieldset>   
 
- 
+     <div class="housebtn">
         <button type="submit" id="houseButton" > Discover my House </button>
+    </div>
     </form>
 
 </div>
