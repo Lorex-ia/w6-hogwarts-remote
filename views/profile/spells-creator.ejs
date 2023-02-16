@@ -1,11 +1,11 @@
-<h1> Spell Creation Course </h1>
-<p> Create your spell </p>
+<h1 class="titlesp"> Spell Creation Course </h1>
 
-<div>
-    <p>Dear <%= user.username %>, in order to create your spells and win your next duel for the <%= user.house %> house, follow the instructions below: </p>
+<div class="creator">
+    <p class="smltxt">Dear <%= user.username %>, in order to create your spells and win your next duel for the <%= user.house %> house, follow the instructions below: </p>
        
         <!-- START OF TYPING FORM -->
-        <form action="/profile/spells-creator" method="post">
+      <div >
+        <form class="splform" action="/profile/spells-creator" method="post">
             <label> Title:
               <input type="text" name="spellname" />
             </label>
@@ -15,11 +15,12 @@
             </label>
            
             <label> Difficulty:
-              <input type="number" name="difficulty" min="1" max="3" />
+              <input class="diff" type="number" name="difficulty" min="1" max="3" />
             </label>
            
-            <button class="loungebtn" type="submit"> Create your spell!</button>
+            <button class="duelbtn" type="submit"> Create your spell!</button>
           </form>
+        </div>
         <!-- END OF TYPING FORM -->
 
 

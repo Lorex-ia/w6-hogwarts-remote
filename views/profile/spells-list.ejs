@@ -3,8 +3,8 @@
 
     <!-- Form so the user can filter his search -->
     <form action="/profile/spells-list/" method="GET">
-        <label for="difficulty">Spell difficulty:</label>
-        <select id="difficulty" name="difficulty">
+        <label  class="spelltext" for="difficulty">Spell difficulty:</label>
+        <select class="filterlbl" id="difficulty" name="difficulty">
           <option value="">All</option>
           <option value="1">1 (Easy)</option>
           <option value="2">2 (Medium) </option>
@@ -21,7 +21,10 @@
       <h2><%= spell.spellname %></h2>
       <h4>Description: <%= spell.description %></h4>
       <h4>Difficulty: <%= spell.difficulty %></h4>
-      <p>by <%= spell.owner.username %> </p>
+      <div class="deetz">
+        <p> By <%= spell.owner.username %></hp>
+        <p>From house: <%= spell.owner.house %></p>
+      </div>
     </div>
   
   <% }) %> 

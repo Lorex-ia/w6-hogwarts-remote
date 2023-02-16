@@ -347,7 +347,7 @@ router.get('/spells-list/difficulty/:difficulty', async (req, res, next) => {
   router.get('/spell-details/:spellId', async (req, res) => {
     const spellFound = await Spell.findById(req.params.spellId).populate('owner')
     console.log( "spell Found here:", req.session.user )
-    res.render('profile/spell-details', { user: req.session.user, spellFound })
+    res.render('profile/spell-details', { user: req.session.user, spellFound, layout: '../views/layouts/profile-layout.ejs' })
   })
 
 
@@ -357,7 +357,7 @@ router.get('/spells-list/difficulty/:difficulty', async (req, res, next) => {
 router.get('/spells-list/:spellId/update', async (req, res) => {
     const spell = await Spell.findById(req.params.spellId)
     console.log(req.session.user)
-    res.render('profile/spells-edit', { spell, update: true, user: req.session.user })
+    res.render('profile/spells-edit', { spell, update: true, user: req.session.user, layout: '../views/layouts/profile-layout.ejs' })
   });
 
   

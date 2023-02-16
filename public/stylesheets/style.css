@@ -664,7 +664,6 @@ margin-bottom: -7px;
 
 /* Spells pages */
 .ancestral{
-
   text-align: center;
   width:350px;
   height: 70%;
@@ -680,10 +679,24 @@ margin-bottom: -7px;
   color: black;
   border-radius: 80px 20px 80px 20px;
   background-color: rgb(255, 200, 0);
-  
   cursor: url('../images/lumosCursor.png') 32 32, auto;
-  
 }
+
+
+.ancestral:hover {
+  border-radius: 12px;
+  padding: 20px;
+  margin: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-left:60px;
+  padding-right:60px;
+  background-color: #00000099;
+  border-radius: 80px 20px 80px 20px;
+  box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
+  }
+
+
 
 .anctxt{
   color:black;
@@ -700,19 +713,7 @@ margin-bottom: -7px;
 .anctxt:hover{
   color: rgb(255, 204, 0);
 }
-.ancestral:hover {
 
-  border-radius: 12px;
-  padding: 20px;
-  margin: 10px;
-  font-size: 1.1em;
-  font-weight: bold;
-  padding-left:60px;
-  padding-right:60px;
-  background-color: #00000099;
-  border-radius: 80px 20px 80px 20px;
-  box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
-  }
 
   .spellupdate{
     color: hsl(277, 100%, 50%);
@@ -771,7 +772,6 @@ box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
     background-color: rgba(0, 0, 0, 0.6);
     cursor: url('../images/lumosCursor.png') 32 32, auto;
     text-shadow: 0 0 3px #edba00, 0 0 5px hsl(20, 100%, 50%);
-    
   }
 
   .filterbtn:hover {
@@ -784,3 +784,111 @@ box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
     border-radius: 80px 20px 80px 20px;
     box-shadow: 0 10px 40px rgba(255, 192, 1, 0.792);
     }
+
+    .filterlbl{
+      border: #deb221 solid 1px;
+      border-radius: 12px;
+      margin: 10px;
+      font-size: 1.1em;
+      font-weight: bold;
+      padding:20px;
+      color: hsl(60, 63%, 72%);
+      background-color: rgba(0, 0, 0, 0.6);
+      cursor: url('../images/lumosCursor.png') 32 32, auto;
+      text-shadow: 0 0 3px #edba00, 0 0 5px hsl(20, 100%, 50%);
+    }
+
+    .spelltext{
+      font-size: 25px;
+    }
+
+
+    /* Spell creator page */
+    .titlesp{
+      font-size: 50px;;
+    }
+
+
+
+    .creator{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .smltxt{
+      font-size: 30px;;
+    }
+
+    .splform{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .splform label{
+    padding:20px;
+    }
+
+    .splform textarea, input{
+      color: hsl(60, 63%, 72%);
+    border-radius: 20px 20px 20px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: url('../images/lumosCursor.png') 32 32, auto;
+    text-shadow: 0 0 3px #edba00, 0 0 5px hsl(20, 100%, 50%);
+    height: 40px;
+    width: 400px;
+
+    }
+    .diff{
+      width:50px;
+      padding-right: 30px;
+    }
+
+
+    .duelbtn{
+      text-align: center;
+      width:350px;
+      height: 70%;
+      border: #deb221 solid 1px;
+      border-radius: 12px;
+      padding: 7px;
+      margin: 10px;
+      font-size: 1.0em;
+      font-weight: bold;
+      padding:20px;
+      padding-left:60px;
+      padding-right:60px;
+      color: black;
+      border-radius: 80px 20px 80px 20px;
+      background-color: rgb(255, 200, 0);
+      cursor: url('../images/lumosCursor.png') 32 32, auto;
+    }
+    
+    
+    .duelbtn:hover {
+      border-radius: 12px;
+      padding: 20px;
+      margin: 10px;
+      font-size: 1.1em;
+      font-weight: bold;
+      padding-left:60px;
+      color:#ffcc00;
+      padding-right:60px;
+      background-color: #00000099;
+      border-radius: 80px 20px 80px 20px;
+      box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
+      }
+
+
+      .deetz{
+        font-size: 15px;
+      }
+
+      .deetz p{
+        margin: 5px;
+      }
+
+      /* //spells edit  */
