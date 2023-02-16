@@ -276,7 +276,7 @@ a {
 /* /// ----------END OF       LOGIN        STYLING --------- */
 /*  ---------- START     SIGNUP        STYLING --------- */
 #letterText {
-    width: 800px;
+    width: 850px;
     margin: 0 auto;
     text-align: center;
     font-size: 1.3em;
@@ -284,7 +284,27 @@ a {
     color: hsl(60, 63%, 72%);
     margin: 20px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: rgba(0, 0, 0, 0.6);
+
+}
+#letterPhoto {
+    opacity: 0.55 ;
+    width: 200px;
+    height: 150px;
 }
 /* /// ----------END OF       SIGNUP        STYLING --------- */
+/* /// ----------START OF       HAT QUIZZZ        STYLING --------- */
+fieldset {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+
+    padding: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+}
+
+
+/* /// ----------END OF       HAT QUIZZZ        STYLING --------- */
