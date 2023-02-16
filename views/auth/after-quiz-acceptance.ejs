@@ -39,6 +39,8 @@
                 
             </p>
 
+            
+
     </div>
 
 
@@ -49,3 +51,37 @@
     </a>
 
 </div>
+
+<% if (user.house === "Gryffindor") { %>
+<embed  src="../audio/GryffindorSorted.mp3" 
+loop=2
+autostart="true" 
+height="0"
+width="0"
+hidden
+>
+<% } else if ( user.house === "Ravenclaw" ) { %>
+    <embed  src="../audio/ravenclaw.mp3" 
+    loop=2
+    autostart="true" 
+    height="0"
+    width="0"
+    hidden
+    >
+    <% } else if ( user.house === "Hufflepuff" ) { %>
+        <embed  src="../audio/sorted_hufflepuff.mp3" 
+        loop=2
+        autostart="true" 
+        height="0"
+        width="0"
+        hidden
+        >
+        <% } else if ( user.house === "Slytherin" ) { %>
+            <embed  src="../audio/slytherin.mp3" 
+            loop=2
+            autostart="true" 
+            height="0"
+            width="0"
+            hidden
+            >
+            <% } %>
