@@ -1,5 +1,11 @@
 /* // START LAYOUT STYLING */
 body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+
         font-family: 'Jim Nightshade', cursive;
         
         overflow: hidden;
@@ -36,6 +42,8 @@ a {
         outline: none;
         padding: 0;
         margin: 0;
+
+        text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
     
     }
     button, select, textarea
@@ -47,8 +55,30 @@ a {
         background: none;
     
         cursor: url('../images/lumosCursor.png') 32 32, auto;
+
+        text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
     
         
+    }
+
+    #errorMessageFromLogin {
+        border-radius: 0.5em;
+        background-color: rgba(51, 104, 137, 0.6);
+        margin: 0.5em;
+        border: hsl(197, 78%, 21%) 0.1em solid;
+        text-shadow: 0 0 0.2em hsl(0, 30%, 48%), 0 0 0.03em #09094e;
+    
+        padding: 0.1em;
+        color: rgb(131, 39, 39);
+        font-size: 1.3em;
+        font-weight: bold;
+        text-align: center;
+    
+    
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
 /* /// ----------END OF       LAYOUT        STYLING --------- */
@@ -103,38 +133,26 @@ a {
 }
 
 #firstpage-welcome-div {
-    color: hsla(34, 30%, 82%, 0.6);
+    color: hsla(36, 12%, 69%, 0.6);
+    text-shadow: 0 0 3px #494242, 0 0 5px hsl(21, 33%, 8%);
     
 
 }
 #welcomeText {
-
+    text-shadow: 0 0 3px #5c5454, 0 0 5px hsl(21, 33%, 8%);
 }
 #letterQuestion {
-
+    text-shadow: 0 0 3px #5c5050, 0 0 5px hsl(22, 49%, 8%);
 }
 
 #firstpage-buttons-div {
+    width: 10em;
     display: flex;
     justify-content: space-between;
     align-items: center;    
 }
 
-#firstpage-button {
-    margin: 5px;
-    padding: 5px;
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    background: var(--primary-color);
-    color: var(--primary-color-text);
-    font-weight: bold;
-}
-#firstpage-button:hover {
-    background-color: #fd8b7f;
-    border-color: rgba(196, 94, 94, 0.905); 
-    color: rgb(153, 65, 65);
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 
 
 /* /// ----------END OF       INDEX        STYLING --------- */
@@ -161,13 +179,15 @@ a {
     height: 50%; */
     border: #deb221 solid 1px;
     border-radius: 12px;
-    padding: 7px;
-    margin: 10px;
-    font-size: 1.1em;
+    padding: 0.3em;
+    margin: 0.8em;
+    font-size: 0.9em;
     font-weight: bold;
     color: hsl(60, 63%, 72%);
     background-color: rgba(0, 0, 0, 0.6);
     text-align: center;
+
+    text-shadow: 0 0 3px #391d1d, 0 0 5px hsl(20, 100%, 50%);
 }
 .loginInput:focus {
     outline: none;
@@ -177,6 +197,8 @@ a {
 }
 .loginInput::placeholder {
     color: hsl(46, 88%, 74%);
+    text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
+
     font-size: 1.1em;
     font-weight: bold;
     margin: 10px;
@@ -188,6 +210,8 @@ a {
     font-weight: bold;
     margin: 10px;
     text-align: center;
+
+        text-shadow: 0 0 3px #b09d9d, 0 0 5px hsl(20, 34%, 15%);
 }
 #loginButton {
     width: 60%;
@@ -196,12 +220,14 @@ a {
     border-radius: 12px;
     padding: 7px;
     margin: 10px;
-    font-size: 1.1em;
+    font-size: 1.0em;
     font-weight: bold;
     color: hsl(60, 63%, 72%);
     background-color: rgba(0, 0, 0, 0.6);
 
     cursor: url('../images/lumosCursor.png') 32 32, auto;
+
+    text-shadow: 0 0 3px #201818, 0 0 5px hsl(20, 100%, 50%);
 
 }
 #loginButton:hover {
@@ -222,7 +248,7 @@ a {
     border-radius: 12px;
     padding: 7px;
     margin: 10px;
-    font-size: 1.1em;
+    font-size: 1.0em;
     font-weight: bold;
     color: hsl(60, 63%, 72%);
     background-color: rgba(0, 0, 0, 0.6);
@@ -259,7 +285,7 @@ a {
     color: hsl(60, 63%, 72%);
     background-color: rgba(0, 0, 0, 0.6);
 }
-#loginButton:before {
+/* #loginButton:before {
     content: "";
     position: absolute;
     top: 0;
@@ -268,8 +294,8 @@ a {
     height: 100%;
     z-index: -1;
 
-}
-#loginButton:after {
+} */
+/* #loginButton:after {
     content: "";
     position: absolute;
     top: 0;
@@ -277,14 +303,14 @@ a {
     width: 100%;
     height: 100%;
     z-index: -1;
-}
+} */
 /* /// ----------END OF       LOGIN        STYLING --------- */
 /*  ---------- START     SIGNUP        STYLING --------- */
 #letterText {
     width: 850px;
     margin: 0 auto;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: bold;
     color: hsl(60, 63%, 72%);
     margin: 20px;
@@ -292,10 +318,12 @@ a {
     border-radius: 30px;
     background-color: rgba(0, 0, 0, 0.6);
 
+    text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
+
 }
 #letterPhoto {
     opacity: 0.55 ;
-    width: 200px;
+    width: 300px;
     height: 150px;
 }
 /* /// ----------END OF       SIGNUP        STYLING --------- */
@@ -324,6 +352,10 @@ a {
     border-radius: 50px;
     border: 0.7em solid rgba(67, 23, 23, 0);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
+
+    /* text-shadow: 0.05em 0.05em hsl(0, 77%, 24%); */
 
 }
 
@@ -355,6 +387,49 @@ a {
 }
 
 
+
+input[type="radio"] {
+    opacity: 0.7;
+    cursor: pointer;
+
+    background-color: transparent;
+    border:hwb(60 79% 8%) 0.24em solid;
+
+    /* width: 100%;
+    height: 100%; */
+    padding: 0.4em;
+    margin: 0.4em;
+
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
+
+
+    /* -ms-appearance: none;
+    -moz-appearance: none; */
+
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+
+    /* outline: none; */
+
+
+    border-radius: 50%;
+    /* box-shadow: none; */
+
+
+}
+input[type="radio"]:checked {
+    opacity: 0.5;
+    background-color: hwb(60 68% 13%);
+}
+
+
+
+
+
 #hatQuizForm {
     display: flex;
     flex-direction: row;
@@ -364,10 +439,13 @@ a {
 fieldset {
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.6);
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+
     border: black;
 
-    padding: 7px;
+    padding-right: 10px;
+    padding-left: 5px;
 
     display: flex;
     flex-direction: row;
@@ -385,12 +463,19 @@ fieldset legend {
     font-weight: bold;
     color: rgb(68, 189, 103);
     /* -------------------------  here the fieldset legend */
-    text-align: center;
+    /* text-align:justify; */
+
+    text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
 }
 fieldset label {
     font-size: 1.1em;
     font-weight: solid;
     color: #ffca8d;
+
+    text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
+    text-align:start;
+    padding-right: 10px;
+    padding-left: 5px;
 }
 
 #houseButton {
@@ -405,6 +490,8 @@ fieldset label {
     background-color: rgba(0, 0, 0, 0.6);
 
     cursor: url('../images/lumosCursor.png') 32 32, auto;
+
+    text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
 
 }
 #houseButton:hover {
@@ -498,6 +585,8 @@ fieldset label {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
+    text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
 }
 #acceptanceSmallText {
     height: 200px auto;
@@ -512,11 +601,17 @@ fieldset label {
     padding: 5px;
     border-radius: 10px;
     border: 2px solid black;
+
+    text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
 }
 #acceptanceSmallText span {
     font-size: 1.2em;
     font-weight: bold;
     color: #b9c817;
+
+    text-shadow: 0 0 3px #660707, 0 0 5px hsl(20, 100%, 50%);
+
+    
 }
 
 #indexLayoutNav {

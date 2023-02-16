@@ -2,15 +2,17 @@
 <div id="hatquizPage" >
 
     <div id="quiz-header" >
-        <div class="quiz-header-divs" >  </div>  
+        <div class="quiz-header-divs" >
+                <!-- Display error message -- if there is any question left answered  -->
+                <% if (typeof errorMessage != "undefined") { %>
+                    <p id="errorMessageFromLogin" > <%= errorMessage %> </p>
+                <% } %>    
+        </div>  
 
         <div class="quiz-header-divs" >
             <h1> Welcome to the sorting hat's quizz </h1>
             
-                <!-- Display error message -- if there is any question left answered  -->
-                <% if (typeof errorMessage != "undefined") { %>
-                    <p> <%= errorMessage %> </p>
-                <% } %>
+
         </div>
     
         <div class="quiz-header-divs"  >   
