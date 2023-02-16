@@ -320,12 +320,10 @@ padding:20px;
 color: hsl(60, 63%, 72%);
 border-radius: 80px 20px 80px 20px;
 background-color: rgba(0, 0, 0, 0.6);
-
 cursor: url('../images/lumosCursor.png') 32 32, auto;
-
 text-shadow: 0 0 3px #edba00, 0 0 5px hsl(20, 100%, 50%);
-
 }
+
 #loungeloginButton:hover {
 border-radius: 12px;
 padding: 7px;
@@ -666,6 +664,7 @@ margin-bottom: -7px;
 
 /* Spells pages */
 .ancestral{
+
   text-align: center;
   width:350px;
   height: 70%;
@@ -694,6 +693,7 @@ margin-bottom: -7px;
   display:flex;
   justify-content: center;
   align-items: center;
+  margin-top:50px;
 
 }
   
@@ -718,10 +718,69 @@ margin-bottom: -7px;
     color: hsl(277, 100%, 50%);
   text-shadow: 0 0 1px #e30bf7, 0 0 20px #3f0a5ee4;
   font-size: 15px;
-  text-align: center;
 
   }
 
-  .spelldiv{
+  .spelldiv {
     width:500px;
+    border-radius: 80px 20px 80px 20px;
+    box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
   }
+
+  .spelldiv h2, p{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+  }
+
+  .spelldiv a{
+    display:flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction:column;
+    margin-right:50px;
+  }
+
+  .spelldiv h2{
+    margin-top:-3px;
+background-color: #ffbb00c0;
+padding:20px;
+border-radius: 80px 20px 80px 20px;
+box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
+  }
+
+  .spelllist{
+    font-size: 50px;
+    margin-bottom:-10px;
+  }
+
+
+
+  /* Spells list page */
+
+  .filterbtn{
+    border: #deb221 solid 1px;
+    border-radius: 12px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding:20px;
+    color: hsl(60, 63%, 72%);
+    border-radius: 80px 20px 80px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: url('../images/lumosCursor.png') 32 32, auto;
+    text-shadow: 0 0 3px #edba00, 0 0 5px hsl(20, 100%, 50%);
+    
+  }
+
+  .filterbtn:hover {
+    border-radius: 12px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding:20px;
+    background-color: #00000099;
+    border-radius: 80px 20px 80px 20px;
+    box-shadow: 0 10px 40px rgba(255, 192, 1, 0.792);
+    }

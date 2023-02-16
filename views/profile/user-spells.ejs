@@ -1,4 +1,4 @@
-<h1> These are my spells</h1>
+<h1 class="spelllist"> This is the list of spells you have created:</h1>
 
 
 
@@ -9,9 +9,9 @@
       <% spells.forEach((spell) => { %>
         <% if (spell.owner.toString() === user._id.toString()) { %>
           <div class="spelldiv" style="border: 1px solid rgb(255, 204, 0); margin:1rem; padding:1rem" >
-            <h3>Name:<%= spell.spellname %></h3>
-            <p>Description: <%= spell.description %></p>
-            <p>Difficulty:<%= spell.difficulty %></p>
+            <h2>Name:  <%= spell.spellname %></h2>
+            <p>Description:  <%= spell.description %></p>
+            <p>Difficulty:  <%= spell.difficulty %></p>
             <a class="spellupdate" href ="/profile/spell-details/<%- spell._id %>">Update my spell</a>
           </div>
         <% } %>
