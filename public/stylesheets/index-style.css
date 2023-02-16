@@ -354,7 +354,8 @@ fieldset legend {
 
     font-size: 1.3em;
     font-weight: bold;
-    color: rgb(239, 168, 86);
+    color: rgb(68, 189, 103);
+    /* -------------------  here the fieldset legend */
     text-align: center;
 }
 fieldset label {
@@ -453,7 +454,45 @@ fieldset label {
 
 
 /* /// ----------START OF       official acceptance after quiz       STYLING --------- */
+#acceptancePage {
+    width: 100vw;
+    height: 100vh;
+    /* position: fixed;
+    top: 0; */
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#acceptanceBigText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#acceptanceSmallText {
+    height: 200px auto;
+    width: 200px auto;
+    color: rgb(23, 200, 49);
+    font-size: 1.2em  ;
+    font-weight: solid;
+
+    border: #4c1b1b;
+    background-color: #4a050599;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+#acceptanceSmallText span {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #b9c817;
+}
+
+#indexLayoutNav {
+    visibility: hidden;
+}
 
 
 
