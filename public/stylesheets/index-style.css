@@ -294,17 +294,167 @@ a {
     height: 150px;
 }
 /* /// ----------END OF       SIGNUP        STYLING --------- */
-/* /// ----------START OF       HAT QUIZZZ        STYLING --------- */
-fieldset {
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    margin: 0;
 
-    padding: 10px;
-    font-size: 1.3em;
-    font-weight: bold;
-    color: hsl(60, 63%, 72%);
+
+
+/* /// ----------START OF       HAT QUIZZZ        STYLING --------- */
+#hatquizPage {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+#hatquizPage h1 {
+    font-size: 2.3em;
+}
+
+#quiz-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-header-divs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
+#hatQuizForm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+fieldset {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px;
+    border: black;
+
+    padding: 7px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+fieldset legend {
+    border: black;
+    background-color: hsla(0, 1%, 17%, 0.6);
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+
+    font-size: 1.3em;
+    font-weight: bold;
+    color: rgb(239, 168, 86);
+    text-align: center;
+}
+fieldset label {
+    font-size: 1.1em;
+    font-weight: solid;
+    color: #ffca8d;
+}
+
+#houseButton {
+
+    border: #deb221 solid 1px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+
+    cursor: url('../images/lumosCursor.png') 32 32, auto;
+
+}
+#houseButton:hover {
+    border-color: hsl(46, 54%, 74%) solid 2px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #58535399;
+    background-color: #58535399;
+
+
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#houseButton:active {
+    border-color: #deb221 solid 2px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#houseButton:focus {
+    border-color: #deb221 solid 2px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#houseButton:hover:focus {
+    border-color: #deb221 solid 2px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#houseButton:active:focus {
+    border-color: #deb221 solid 2px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: hsl(60, 63%, 72%);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#houseButton:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+}
+#houseButton:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 /* /// ----------END OF       HAT QUIZZZ        STYLING --------- */
+
+
+/* /// ----------START OF       official acceptance after quiz       STYLING --------- */
+
+
+
+
+/* /// ----------END OF       official acceptance after quiz       STYLING --------- */
