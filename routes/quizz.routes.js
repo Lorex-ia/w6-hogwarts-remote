@@ -15,9 +15,6 @@ router.post('/', isLoggedIn, async (req, res) => {
 //These below are the names that get printed:
     console.log("made it here, here is the req body:", req.body)
 
-//Diana:
-    console.log("diana: ");
-
     let keys = Object.keys(req.body);
     console.log(keys[0] + keys[1] + keys[2] + keys[3] + keys[4] + "here are the keys" );
 

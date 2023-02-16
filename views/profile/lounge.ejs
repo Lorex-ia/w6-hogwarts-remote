@@ -1,34 +1,25 @@
-<div>
-    <p> PROFILE/ LOUNGE
-        
-        </p> 
-</div>
-
-<!-- IM SORRY IN ADVANCE IF IT'S TOO CRINGE MUHAHAHA -->
 
 <div>
-    <h2> Welcome to House Lounges, <%= user.username %> </h2>
+    <h2> Welcome to your house lounge, <%= user.username %> </h2>
 
     <p>  
-        Us here, at Remote Hogwarts School, we value your time. 
+        Us here, at Remote Hogwarts School, value your time. 
         <br>
-        Your time means Fun Time.. so what does it rhyme with? 
-        <br>
-        <br>
-        Yep. You've guessed it. LOUNGE TIME!
+        Your time means fun time. So what does it rhyme with? 
         <br>
         <br>
-        So.. we updated that boring name (Common Room.. so sad.. so dull) to... House LOUNGE (better, right??). 
+        Yep. You've guessed it: LOUNGE TIME!
         <br>
         <br>
-        And besides that, -- 
-        <br>
-        -------- "Why are they called Common rooms when only people from a certain house can go into them? 
-        <br>
-        ------------------ Doesn't that make them uncommon rooms?". Badumtssssssss
+        So.. we updated that boring name ("Common Room"...so sad, so dull) to: House Lounge (better, hyper, right?). 
         <br>
         <br>
-        So, I believe your time has come to explore some fun stuff within your House Community.
+        And besides that, why are they called "Common rooms" when only people from a certain house can go into them? 
+        <br>
+        Doesn't that make them "Uncommon rooms"?
+        <br>
+        <br>
+        So, we believe your time has come to explore some fun stuff within your House Lounge.
         <br>
         All you have to do is type in the House Password below. 
         <br>
@@ -36,18 +27,18 @@
         If you don't remember it you can always go back to <a style="white-space: nowrap;" href="/profile/profile-info">your Hogwarts Profile</a>, check the House Password and come back here. (you can just copy paste from there into the form)
         <br>
         <br>
-        Have Fun.. 
-        <br>
-        ----> Fun time, Lounge Time below...
+        Have Fun!
+     
 
     </p>
-    
+    <h2>
     <form method="POST" action="/profile/lounge">
-        <label> Your House Password here:
+        <label> Type your secret House Password here:
             <input type="text" name="typedHousePassword" required >
         </label>
+    </h2>
     
-        <button type="submit">Me wants that Lounge Time!!!</button>
+        <button type="submit">Lounge time!</button>
     </form>
 
 </div>

@@ -7,24 +7,36 @@ const { isLoggedIn, isLoggedOut, isCreator } = require('../middleware/route-guar
 const axios = require('axios');
 
 /* GET Hogwarts home page */
+// router.get("/", isLoggedIn, (req, res, next) => {
+//     res.render("profile/profile-home", { 
+//         user: req. session.user,
+//         layout: "../views/layouts/profile-layout.ejs"
+//      }
+//     );
+    
+//     console.log('SESSION =====> ', req.session);
+
+//     if (!req.session.user) {
+//             res.redirect("/auth/login");
+//     }
+// });
+
+//New route to update the backgrounds depending on the house the user is in
 router.get("/", isLoggedIn, (req, res, next) => {
-    res.render("profile/profile-home", { 
-        user: req. session.user,
-        layout: "../views/layouts/profile-layout.ejs" }
-    );
+    const house = req.session.user.house;
+    res.render("profile/profile-home", {
+      user: req.session.user,
+      house: req.session.user.house,
+    });
     
     console.log('SESSION =====> ', req.session);
 
     if (!req.session.user) {
-            res.redirect("/auth/login");
+        res.redirect("/auth/login");
     }
 });
 
-// router.get("/profile-info", isLoggedIn, (req, res, next) => {
-//     res.render("profile/profile-info", { 
-//         user: req.session.user,
-//         layout: "../views/layouts/profile-layout.ejs" });
-// });
+
 
 //new profile info route to count the number of spells
 router.get("/profile-info", isLoggedIn, async (req, res, next) => {
@@ -42,6 +54,11 @@ router.get("/profile-info", isLoggedIn, async (req, res, next) => {
       res.redirect("/");
     }
   });
+  // router.get("/profile-info", isLoggedIn, (req, res, next) => {
+//     res.render("profile/profile-info", { 
+//         user: req.session.user,
+//         layout: "../views/layouts/profile-layout.ejs" });
+// });
 
 
 
@@ -62,6 +79,9 @@ router.get("/lounge", isLoggedIn, (req, res, next) => {
         user: req.session.user, 
         layout: "../views/layouts/profile-layout.ejs" })
 });
+
+
+
 
 //SECOND FOR      POST      LOUNGE
 router.post("/lounge", isLoggedIn, (req, res, next) => {
@@ -157,25 +177,29 @@ router.post("/lounge", isLoggedIn, (req, res, next) => {
 router.get("/lounges/gryff", isLoggedIn, (req, res, next) => {
     res.render("profile/lounges/gryff-lounge", { 
         user: req.session.user, 
-        layout: "../views/layouts/profile-layout.ejs" })
+        // layout: "../views/layouts/profile-layout.ejs" 
+    })
 });
 
 router.get("/lounges/huff", isLoggedIn, (req, res, next) => {
     res.render("profile/lounges/huff-lounge", { 
         user: req.session.user, 
-        layout: "../views/layouts/profile-layout.ejs" })
+        // layout: "../views/layouts/profile-layout.ejs" 
+    })
 });
 
 router.get("/lounges/rave", isLoggedIn, (req, res, next) => {
     res.render("profile/lounges/rave-lounge", { 
         user: req.session.user, 
-        layout: "../views/layouts/profile-layout.ejs" })
+        // layout: "../views/layouts/profile-layout.ejs" 
+    })
 });
 
 router.get("/lounges/slyth", isLoggedIn, (req, res) => {
     res.render("profile/lounges/slyth-lounge", { 
         user: req.session.user, 
-        layout: "../views/layouts/profile-layout.ejs" })
+        // layout: "../views/layouts/profile-layout.ejs" 
+    })
 });
 
 //  ROUTER FOR      LOGOUT
