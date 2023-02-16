@@ -240,8 +240,10 @@ font-size:30px;
 
 /* Profile page */
 span{
-  color:rgb(255, 119, 0);
-  font-size: 30px;;
+  color:rgb(255, 140, 0);
+  font-size: 30px;
+  margin-left:3px;
+  margin-right:3px;
 }
 
 
@@ -400,7 +402,7 @@ background-color: rgba(0, 0, 0, 0.6);
 #syllabusHeader h1{
   display: flex;
   justify-content: center;
-  font-size: 80px;
+  font-size: 40px;
 }
 
 
@@ -660,6 +662,13 @@ margin-bottom: -7px;
   color:#ffc400;
 }
 
+.linklounge{
+  color: hsl(0, 0%, 100%);
+  text-shadow: 0 0 1px #cacaca, 0 0 2px #868686, 0 0 8px #787878, 0 0 20px #4d4d4de4;
+  font-size:30px;
+  margin-top:-2px;
+}
+
 
 
 /* Spells pages */
@@ -716,8 +725,8 @@ margin-bottom: -7px;
 
 
   .spellupdate{
-    color: hsl(277, 100%, 50%);
-  text-shadow: 0 0 1px #e30bf7, 0 0 20px #3f0a5ee4;
+    color: hsl(282, 100%, 52%);
+    text-shadow: 0 0 1px #4e0bf7, 0 0 2px #2f0168, 0 0 8px #3b016d, 0 0 20px #850bf7e4;
   font-size: 15px;
 
   }
@@ -752,7 +761,7 @@ box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
   }
 
   .spelllist{
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom:-10px;
   }
 
@@ -892,3 +901,53 @@ box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
       }
 
       /* //spells edit  */
+
+      .updatediv {
+        width:500px;
+        border-radius: 80px 20px 80px 20px;
+        box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
+      }
+
+
+  .updatediv h2{
+background-color: #ffbb00c0;
+margin:10px;
+padding:10px;
+border-radius: 80px 20px 80px 20px;
+box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
+  }
+
+  .updatediv h2, p{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+  }
+
+  .update{
+    color: hsl(0, 0%, 100%);
+    text-shadow: 0 0 1px #cacaca, 0 0 2px #868686, 0 0 8px #787878, 0 0 20px #4d4d4de4;
+
+  }
+
+
+  .info{
+    font-size: 30px;
+  }
+
+
+  .bodyprofile p, span{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+  }
+
+  .bodyprofile span{
+    color: hsl(0, 0%, 100%);
+    text-shadow: 0 0 1px #cacaca, 0 0 2px #868686, 0 0 8px #787878, 0 0 20px #4d4d4de4;
+  }
+
+  .cmnroom{
+    font-size: 70px;;
+  }

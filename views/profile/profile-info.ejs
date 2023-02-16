@@ -1,14 +1,15 @@
 
 <h1>Welcome, <%= user.username %> </h1>
 
+<div class="bodyprofile">
     <p> <span> <% 
         if (user.house) { %> 
             House of <%= user.house %> </p> <% } %>
         </span> <p>
 
-    <p>You have created <span><%= numSpells %>  </span> spells</p>
+    <p>You have created  <span><%= numSpells %>  </span>  spells</p>
 
-    <p> Your house password is:
+    <p> Your house password is: 
     <span>
         <% if (user.house === "Gryffindor") { %>
             "Knock, knock! Who's there? Dumb! Dumb who? Dumb-door's password"
@@ -21,14 +22,13 @@
         <% } %>
     </span>
         <br>
-        <p> ===== Access the 
-        <a class="links" style="white-space: nowrap;" href="/profile/lounge"> House Lounge </a> =====
-    </p>
-</p>
 
-    <p>Your assigned Wand is:<span> <%= user.wand %> </span></p>
+
+    <p>Your assigned Wand is:  <span> <%= user.wand %> </span></p>
 
     <p>Enjoy Hogwarts!</p>
+</div>
+
 </div>
 
 <embed  src="../audio/room_requirements.mp3" 

@@ -1,9 +1,11 @@
 <h1 class="titlesp">SPELL DETAILS</h1>
-<h2><%= spellFound.spellname %></h2>
-<h2><%= spellFound.description %></h2>
-<h2><%= spellFound.difficultyy %></h2>
+<div class="updatediv">
+  <h2>Name: <%= spellFound.spellname %></h2>
+  <p>Details: <%= spellFound.description %></p>
+  <p>Difficulty: <%= spellFound.difficulty %></p>
+</div>
 
-<a href="/profile/spells-list/<%- spellFound._id %>/update">Modify the spell</a>
+<a class="update" href="/profile/spells-list/<%- spellFound._id %>/update">Modify the spell</a>
 
 <form method="POST" action="/profile/<%- spellFound._id %>/delete">
   <button class="duelbtn" type="submit">Delete</button>
