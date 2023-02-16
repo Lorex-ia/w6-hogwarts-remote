@@ -12,17 +12,21 @@ router.get("/signup", isLoggedOut, (req, res) => {
 });
 
 
+
 router.post('/signup', isLoggedOut, async (req, res) => {
     const body = {...req.body};
 
     if (body.password.length < 6) {
-        res.render('auth/signup', { errorMessage: 
-            "Password must be at least 6 characters long", body: req.body });
+        res.render('auth/signup', { 
+            errorMessageFromLogin: "Password must be at least 6 characters long", 
+            user: undefined,
+        });
     }
     else if (body.username.charAt(0) ===  body.username.charAt(0).toLowerCase()) {
         res.render('auth/signup', {
-            errorMessage:  "Name must start with a capital letter", 
-            body: req.body });
+            errorMessageFromLogin:  "Name must start with a capital letter", 
+            user: undefined,
+        });
     }
     else
     {

@@ -1,17 +1,21 @@
 <!-- <h2>Sign up page</h2> -->
 
 <!-- THIS SHOWS ONLY WHEN THE USER TRIED TO LOGIN WITHOUT MAKING AN ACCOUNT FIRST. THE ERROR MESSAGE SHOULD BE "User not found, you have to get the letter first". -->
-<div id="errorMessageFromLogin">
-    <% if (typeof errorMessageFromLogin != "undefined") { %>
-        <p>
-            <%= errorMessageFromLogin %>
-        </p>
-        <% } %>
-</div>
+
 
 
 
 <div id="loginBody" >
+    
+    <div id="errorMessageFromLogin">
+        <% if (typeof errorMessageFromLogin != "undefined") { %>
+            <p>
+                <%= errorMessageFromLogin %>
+            </p>
+            <% } %>
+    
+    
+    </div>
     
     <p id="letterText" > <!-- START OF LETTER -->
         We are gladly announcing that Hogwarts is expanding its courses to the Online World.
@@ -49,6 +53,12 @@
         </form>
         <!-- END OF TYPING FORM -->
 
+        <!-- ERROR  -->
+<% if (typeof errorMessage != "undefined") { %>
+    <p class="errors"> <%= errorMessage %> </p>
+<% } %>
+<!-- END OF ERROR-->
+
 </div>
 
 
@@ -57,8 +67,3 @@
 
 
 
-<!-- ERROR  -->
-<% if (typeof errorMessage != "undefined") { %>
-    <p> <%= errorMessage %> </p>
-<% } %>
-<!-- END OF ERROR-->
