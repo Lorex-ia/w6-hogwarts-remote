@@ -604,11 +604,11 @@ margin-bottom: -7px;
 }
 
 .ravenclaw {
-  background-image: url('/images/raven1.jpg');
-  background-size: 90%;
+  background-image: url('/images/raven2.jpg');
+  background-size: 80%;
   background-position: left 50px;
-  background-position-x: 200px;
-  background-position-y: 150px;
+  background-position-x: 400px;
+  background-position-y: 180px;
 }
 
 .slytherin {
