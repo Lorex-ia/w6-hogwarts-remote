@@ -3,4 +3,49 @@
 
     <p> Welcome home, <%= user.username %>, from house <%= user.house %> </p>
   </body>
+
+
+  <!-- Code for the music  -->
+
+  <script>
+    window.onload = function() {
+      var audio = document.getElementById("houses");
+      audio.volume = 0.1; // set volume to 50%
+    };
+  </script>
   
+  <embed  src="../audio/Hedwigs_theme.mp3" 
+  loop=2
+  autostart="true" 
+  height="0">
+
+  <% if (user.house === "Gryffindor") { %>
+    <embed  id= "houses" src="../audio/GryffindorSorted.mp3" 
+    loop=2
+    autostart="true" 
+    height="0"
+    width="0"
+    hidden>
+    <% } else if ( user.house === "Ravenclaw" ) { %>
+        <embed id= "houses" src="../audio/ravenclaw.mp3" 
+        loop=2
+        autostart="true" 
+        height="0"
+        width="0"
+        hidden>
+        <% } else if ( user.house === "Hufflepuff" ) { %>
+            <embed id= "houses" src="../audio/sorted_hufflepuff.mp3" 
+            loop=2
+            autostart="true" 
+            height="0"
+            width="0"
+            hidden>
+            <% } else if ( user.house === "Slytherin" ) { %>
+                <embed id= "houses" src="../audio/slytherin.mp3" 
+                loop=2
+                autostart="true" 
+                height="0"
+                width="0"
+                hidden>
+                <% } %>
+

@@ -19,10 +19,15 @@
         <% } else if (user.house === "Slytherin") { %>
             " Slytherin to your terminal like a boss "
         <% } %>
-        <a style="white-space: nowrap;" href="/profile/lounge"> House Lounge </a>
+        <a class="links" style="white-space: nowrap;" href="/profile/lounge"> House Lounge </a>
     </p>
 
     <p>Your assigned Wand is: <%= user.wand %></p>
 
     <p>Enjoy Hogwarts!</p>
 </div>
+
+<embed  src="../audio/room_requirements.mp3" 
+loop=2
+autostart="true" 
+height="0">

@@ -5,6 +5,8 @@ body {
   margin:0;
   background-image: url('/images/hog.png');
   background-size: cover;
+  cursor: url('../images/lumosCursor.png') 32 32, auto;
+  
   
   /* background-color:rgba(228, 224, 214, 0.9) */
 
@@ -374,7 +376,7 @@ a {
 
 .slytherin {
   background-image: url('/images/slyth1.jpg');
-  background-size: 110%;
+  background-size: 90%;
   background-position: left 50px;
   background-position-x: 200px;
   background-position-y: 150px;
@@ -395,7 +397,7 @@ a {
 
 .second-hufflepuff {
   background-image: url('/images/huff.gif');
-  background-size: 90%;
+  background-size: 120%;
   background-position: left 50px;
   background-position-x: 200px;
   background-position-y: 150px;
@@ -403,16 +405,22 @@ a {
 
 .second-ravenclaw {
   background-image: url('/images/rave.gif');
-  background-size: 90%;
+  background-size: 120%;
   background-position: left 50px;
   background-position-x: 200px;
   background-position-y: 150px;
 }
 
 .second-slytherin {
-  background-image: url('/images/slyth.gif');
-  background-size: 90%;
+  background-image: url('/images/slyth2.gif');
+  background-size: 120%;
   background-position: left 50px;
   background-position-x: 200px;
   background-position-y: 150px;
+}
+
+
+/* // Links style  */
+.links{
+  color:#ffc400;
 }
