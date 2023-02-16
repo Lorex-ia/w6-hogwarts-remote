@@ -181,9 +181,9 @@ a {
     border-radius: 12px;
     padding: 0.3em;
     margin: 0.8em;
-    font-size: 0.9em;
+    font-size: 1.2em;
     font-weight: bold;
-    color: hsl(60, 63%, 72%);
+    color: hsl(46, 60%, 37%);
     background-color: rgba(0, 0, 0, 0.6);
     text-align: center;
 
@@ -192,7 +192,7 @@ a {
 .loginInput:focus {
     outline: none;
     border: #deb221 solid 2px;
-    border-radius: 12px;
+    border-radius: 40px;
     padding: 10px;
 }
 .loginInput::placeholder {
@@ -205,13 +205,12 @@ a {
     text-align: center;
 }
 .loginInput:focus::placeholder {
-    color: hsl(46, 88%, 74%);
+    color: hsl(49, 22%, 15%);
     font-size: 1.1em;
     font-weight: bold;
     margin: 10px;
     text-align: center;
 
-        text-shadow: 0 0 3px #b09d9d, 0 0 5px hsl(20, 34%, 15%);
 }
 #loginButton {
     width: 60%;
@@ -238,10 +237,10 @@ a {
     font-size: 1.1em;
     font-weight: bold;
     color: #58535399;
-    background-color: #58535399;
+    background-color: #cf811499;
 
 
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 #dc9b329d, 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 #loginButton:active {
     border-color: #deb221 solid 2px;
