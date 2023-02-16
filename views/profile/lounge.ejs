@@ -1,8 +1,8 @@
 
 <div>
-    <h2> Welcome to your house lounge, <%= user.username %> </h2>
+    <h2 class="loungetitle"> Welcome to your house lounge, <%= user.username %> </h2>
 
-    <p>  
+    <p class="loungetxt">  
         Us here, at Remote Hogwarts School, value your time. 
         <br>
         Your time means fun time. So what does it rhyme with? 
@@ -11,34 +11,28 @@
         Yep. You've guessed it: LOUNGE TIME!
         <br>
         <br>
-        So.. we updated that boring name ("Common Room"...so sad, so dull) to: House Lounge (better, hyper, right?). 
-        <br>
-        <br>
-        And besides that, why are they called "Common rooms" when only people from a certain house can go into them? 
-        <br>
-        Doesn't that make them "Uncommon rooms"?
-        <br>
-        <br>
-        So, we believe your time has come to explore some fun stuff within your House Lounge.
-        <br>
         All you have to do is type in the House Password below. 
         <br>
         <br>
-        If you don't remember it you can always go back to <a class="links" style="white-space: nowrap;" href="/profile/profile-info">your Hogwarts Profile</a>, check the House Password and come back here. (you can just copy paste from there into the form)
+        If you don't remember it you can always go back to <a class="links" style="white-space: nowrap;" href="/profile/profile-info">your Hogwarts Profile</a>, check the House Password and come back here. 
         <br>
         <br>
         Have Fun!
      
 
     </p>
+
     <h2>
     <form method="POST" action="/profile/lounge">
         <label> Type your secret House Password here:
-            <input type="text" name="typedHousePassword" required >
+            <input class="loungepwtxt" type="text" name="typedHousePassword" required >
         </label>
     </h2>
     
-        <button type="submit">Lounge time!</button>
+    <div class="loungebtn">
+        <button id="loungeloginButton" type="submit">Lounge time!</button>
+    </div>
+
     </form>
 
 </div>
