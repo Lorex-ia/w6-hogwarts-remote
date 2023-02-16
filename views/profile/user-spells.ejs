@@ -8,24 +8,26 @@
     <% } else { %>
       <% spells.forEach((spell) => { %>
         <% if (spell.owner.toString() === user._id.toString()) { %>
-          <div style="border: 1px solid black; margin:1rem; padding:1rem" >
-            <h3><%= spell.spellname %></h3>
-            <p><%= spell.description %></p>
-            <p><%= spell.difficulty %></p>
-            <a href ="/profile/spell-details/<%- spell._id %>">Update my spell</a>
+          <div class="spelldiv" style="border: 1px solid rgb(255, 204, 0); margin:1rem; padding:1rem" >
+            <h3>Name:<%= spell.spellname %></h3>
+            <p>Description: <%= spell.description %></p>
+            <p>Difficulty:<%= spell.difficulty %></p>
+            <a class="spellupdate" href ="/profile/spell-details/<%- spell._id %>">Update my spell</a>
           </div>
         <% } %>
       <% }); %>
-      <button>
-        <a href="/profile/spells-list"> Ancestral spell list</a>
+    <div class="ancbtn">
+      <button class="ancestral" >
+        <a class="anctxt" href="/profile/spells-list"> Ancestral spell list</a>
      </button>
     <% } %>
+   </div>
   </ul>
 
 
 
-  <button>
-    <a href="/profile/spells-creator"> Create a new spell</a>
+  <button id="loungeloginButton">
+    <a  href="/profile/spells-creator"> Create a new spell</a>
  </button>
 
 
