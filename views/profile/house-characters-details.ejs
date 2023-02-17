@@ -1,6 +1,6 @@
 <div>
-    <p>
-        These are the details of...
+    <p class="divchar">
+        These are the details of:
         <%= character.name %>
     </p>
 
@@ -27,7 +27,7 @@
                         <span >
                             wand :
                             <% if (character.wand.wood) { %>
-                            wood : <%= character.wand.wood %> 
+                            wood  <%= character.wand.wood %> 
                             <% } if ( character.wand.core) { %>
                             core : <%= character.wand.core %> 
                             <% } %>
@@ -53,5 +53,5 @@
     <!-- END OF DISPLAYING THE CHARACTER DETAILS -->
 
 
-    <a href="/profile/house-characters">Back to Character List</a>
+    <a id="characterback" href="/profile/house-characters">Back to Character List</a>
 </div>

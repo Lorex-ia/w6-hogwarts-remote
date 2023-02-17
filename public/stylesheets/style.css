@@ -312,13 +312,13 @@ span{
 width: 30%;
 text-align: center;
 height: 70%;
-border: #deb221 solid 1px;
 border-radius: 12px;
 padding: 7px;
 margin: 10px;
 font-size: 1.0em;
 font-weight: bold;
 padding:20px;
+border: #deb221 solid 1px;
 color: hsl(60, 63%, 72%);
 border-radius: 80px 20px 80px 20px;
 background-color: rgba(0, 0, 0, 0.6);
@@ -327,23 +327,30 @@ text-shadow: 0 0 3px #edba00, 0 0 5px hsl(20, 100%, 50%);
 }
 
 #loungeloginButton:hover {
-border-radius: 12px;
-padding: 7px;
-margin: 10px;
-font-size: 1.1em;
-font-weight: bold;
-padding:20px;
+  width: 30%;
+  text-align: center;
+  height: 70%;
+  border-radius: 12px;
+  padding: 7px;
+  margin: 10px;
+  font-size: 1.0em;
+  font-weight: bold;
+  padding:20px;
 background-color: #00000099;
 border-radius: 80px 20px 80px 20px;
 box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
 }
 
 #loungeloginButtonn:active {
-border-radius: 12px;
-padding: 7px;
-margin: 10px;
-font-size: 1.0em;
-font-weight: bold;
+  width: 30%;
+  text-align: center;
+  height: 70%;
+  border-radius: 12px;
+  padding: 7px;
+  margin: 10px;
+  font-size: 1.0em;
+  font-weight: bold;
+  padding:20px;
 color: hsl(60, 63%, 72%);
 border-radius: 80px 20px 80px 20px;
 background-color: rgba(0, 0, 0, 0.6);
@@ -352,33 +359,45 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0);
 }
 #loungeloginButton:focus {
 border-color: #deb221 solid 2px;
+width: 30%;
+text-align: center;
+height: 70%;
 border-radius: 12px;
 padding: 7px;
 margin: 10px;
-font-size: 1.1em;
+font-size: 1.0em;
 font-weight: bold;
+padding:20px;
 color: hsl(60, 63%, 72%);
 border-radius: 80px 20px 80px 20px;
 background-color: rgba(0, 0, 0, 0.6);
 }
 #loungeloginButton:hover:focus {
 border-color: #deb221 solid 2px;
+width: 30%;
+text-align: center;
+height: 70%;
 border-radius: 12px;
 padding: 7px;
 margin: 10px;
-font-size: 1.1em;
+font-size: 1.0em;
 font-weight: bold;
+padding:20px;
 color: hsl(60, 63%, 72%);
 border-radius: 80px 20px 80px 20px;
 background-color: rgba(0, 0, 0, 0.6);
 }
 #loungeloginButton:active:focus {
 border-color: #deb221 solid 2px;
+width: 30%;
+text-align: center;
+height: 70%;
 border-radius: 12px;
 padding: 7px;
 margin: 10px;
-font-size: 1.1em;
+font-size: 1.0em;
 font-weight: bold;
+padding:20px;
 color: hsl(60, 63%, 72%);
 border-radius: 80px 20px 80px 20px;
 background-color: rgba(0, 0, 0, 0.6);
@@ -951,3 +970,76 @@ box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
   .cmnroom{
     font-size: 70px;;
   }
+
+  .loungebtndiv{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:150px;
+  }
+
+  /* Character details page  */
+
+  .divchar{
+    font-size: 40px;;
+  }
+
+  .displayDetailsList{
+    font-size: 15px;
+  }
+
+  #characterDetailsList{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+  #characterback{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: hsl(282, 100%, 52%);
+    text-shadow: 0 0 1px #4e0bf7, 0 0 2px #2f0168, 0 0 8px #3b016d, 0 0 20px #850bf7e4;
+  }
+
+
+  .lngbtn{
+    text-align: center;
+    width:350px;
+    height: 70%;
+    border: #deb221 solid 1px;
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1.0em;
+    font-weight: bold;
+    padding:20px;
+    padding-left:60px;
+    padding-right:60px;
+    color: rgb(250, 216, 0);
+    border-radius: 80px 20px 80px 20px;
+    background-color: rgba(0, 0, 0, 0.676);
+    cursor: url('../images/lumosCursor.png') 32 32, auto;
+  }
+  
+  
+  .lngbtn:hover {
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-left:60px;
+    color:#ffcc00;
+    padding-right:60px;
+    background-color: #00000099;
+    border-radius: 80px 20px 80px 20px;
+    box-shadow: 0 10px 40px rgba(206, 155, 0, 0.667);
+    }
+
+    .lngbtndiv{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
